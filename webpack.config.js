@@ -1,0 +1,39 @@
+var webpack=require("webpack");
+module.exports={
+    entry:[
+        './index',
+    ],
+    output:{
+        path:'./',
+        filename:'run.js'
+    },
+    module:{
+        loaders:[
+            {
+                test:/\.jsx?$/,
+                loader:'babel',
+                exclude:/node_modules/,
+                query:{
+                    presets:['react']
+                }
+            },
+            {
+                test:/\.css$/,
+                loaders:[
+                    'style',
+                    'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+                ]
+            },
+            {
+                test:/\.(png|jpg|svg|gif|eot|woff|ttf)$/,
+                loader:'url-loader?limit=8192'
+            }
+        ]
+    },
+    resolve:{
+        extensions:['','.js','.jsx']
+    },
+    plugins:[
+        new webpack.NoErrorsPlugin()
+    ]
+}
