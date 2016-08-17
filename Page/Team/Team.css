@@ -1,0 +1,38 @@
+.container{
+    width:100%;
+    background:url("/Page/Team/static/teamBackground.png") center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.infoBox{
+    width:26.8%;
+    right:-26.8%;
+    position: absolute;
+    -webkit-transition: right 0.5s;
+    -moz-transition: right 0.5s;
+    -ms-transition: right 0.5s;
+    -o-transition: right 0.5s;
+    transition: right 0.5s;
+}
+.infoBox>.info{
+    padding:10px 15px;
+    margin-top: 3%;
+    color:white;
+    position: absolute;
+    overflow-y: scroll;
+    z-index:11;
+    letter-spacing: 1px;
+}
+.infoBox>.shelter{
+    width:100%;
+    background-color: #000000;
+    opacity: 0.5;
+    z-index:10;
+    top:0;
+    position: absolute;
+}
+:global(.active){
+    right:1.6%;
+}

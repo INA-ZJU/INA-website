@@ -1,0 +1,40 @@
+.header{
+    width:100%;
+    height:75px;
+    min-width:1000px;
+    background: url("/Common/Header/static/header.png") center;
+}
+.logoBox{
+    margin-left: 8%;
+}
+.logoBox>img{
+    width:100px;
+    margin-top: 12px;
+}
+.linkBox{
+    margin-right: 8%;
+    height:75px;
+}
+.linkBox>ul{
+    margin-top: 15px;
+}
+.linkBox>ul>a{
+    text-align: center;
+    display: block;
+    float:left;
+    width:100px;
+    height:40px;
+    line-height:40px;
+    margin-right: 10px;
+    color:white;
+    -webkit-transition: border-color 0.5s;
+    -moz-transition: border-color 0.5s;
+    -ms-transition: border-color 0.5s;
+    -o-transition: border-color 0.5s;
+    transition: border-color 0.5s;
+    border:1px solid transparent;
+    border-radius: 5px;
+}
+.linkBox>ul>a:hover{
+    border-color:white;
+}

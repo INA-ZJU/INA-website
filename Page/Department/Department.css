@@ -1,0 +1,26 @@
+.container{
+    background: url("/Page/Department/static/departBackground.png") center;
+    background-size:cover;
+}
+.tagBox{
+    text-align: center;
+    width:100%;
+    position: absolute;
+    margin-top: 2%;
+}
+.tagBox>.tag{
+    width:130px;
+    height:40px;
+    line-height:40px;
+    font-size:18px;
+    color:#747373;
+    display: inline-block;
+    margin-left: 3%;
+    margin-right:3%;
+    border: 1px solid #747373;
+    cursor:pointer;
+}
+.tagBox>.tag:hover{
+    color:#f5cd37;
+    border-color: #f5cd37;
+}
