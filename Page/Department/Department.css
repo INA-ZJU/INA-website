@@ -1,6 +1,7 @@
 .container{
     background: url("/Page/Department/static/departBackground.png") center;
     background-size:cover;
+    position: relative;
 }
 .tagBox{
     text-align: center;

@@ -19,7 +19,8 @@ var Carousel=React.createClass({
                 "/Page/Home/static/example.png",
             ],
             currActive:1,
-            currInfo:"INA纳新"
+            currInfo:"INA纳新",
+            isSlide:0   //检测是否正在轮播
         }
     },
     componentDidMount:function(){
@@ -29,6 +30,7 @@ var Carousel=React.createClass({
         item.eq(2).addClass("slideRight");
     },
     circleActive:function(target){
+        if(this.state.isSlide) return;
         var curr=this.state.currActive;
         var diff=(target-curr)>=0?(target-curr):(curr-target);
         if(target>curr) {
@@ -63,7 +65,8 @@ var Carousel=React.createClass({
             next=(curr+1)>=item.length?0:curr+1,
             newPic=(curr+2)>=item.length?curr+2-item.length:curr+2;
         this.setState({
-            currActive:next
+            currActive:next,
+            isSlide:1
         });
         item.eq(curr).addClass("left");
         item.eq(prev).addClass("left");
@@ -77,6 +80,9 @@ var Carousel=React.createClass({
         },20);
         setTimeout(function(){
             item.eq(prev).removeClass("slideLeft left");
+            this.setState({
+                isSlide:0
+            })
         }.bind(this),600)
     },
     slideLeft:function(){
@@ -86,7 +92,8 @@ var Carousel=React.createClass({
             prev=(curr+1)>=item.length?0:curr+1,
             newPic=(curr-2)<0?item.length+curr-2:curr-2;
         this.setState({
-            currActive:next
+            currActive:next,
+            isSlide:1
         })
         item.eq(curr).addClass("right");
         item.eq(prev).addClass("right");
@@ -100,6 +107,9 @@ var Carousel=React.createClass({
         },20);
         setTimeout(function(){
             item.eq(prev).removeClass("slideRight right");
+            this.setState({
+                isSlide:0
+            })
         }.bind(this),600)
     },
     render:function(){

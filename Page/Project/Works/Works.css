@@ -1,0 +1,100 @@
+.works{
+    width:100%;
+    position: absolute;
+    overflow: hidden;
+}
+.slideBox{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    margin-top: 1%;
+}
+.infoBox{
+    width:70%;
+    height:100%;
+    margin:0px auto;
+    position: relative;
+}
+
+.infoBox>.img{
+    width:52%;
+    float:left;
+}
+.infoBox>.intro{
+    width:32%;
+    height:100%;
+    float:right;
+    margin-right:5%;
+}
+.infoBox>.intro>.dsec{
+    color:white;
+    z-index:10;
+    position: absolute;
+    width:30%;
+    height:50%;
+}
+.infoBox>.intro>.dsec>.title{
+    padding:20px 20px 10px 20px;
+    color:#f5cd37;
+    font-size:20px;
+}
+.infoBox>.intro>.dsec>.text{
+    position: absolute;
+    color:white;
+    padding:0px 5px 0px 20px;
+    width:95%;
+    height:100%;
+    overflow-y: scroll;
+    font-size:14px;
+}
+.infoBox>.intro>.shelter{
+    position: absolute;
+    width:32%;
+    height:75%;
+    background-color: black;
+    opacity: 0.5;
+    top:0;
+}
+
+.control{
+    position: absolute;
+    width:100%;
+    text-align: center;
+}
+
+/*--------轮播动效样式--------*/
+:global(.item){
+    width:100%;
+    display: none;
+    position: absolute;
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    -ms-transition: left 0.5s;
+    -o-transition: left 0.5s;
+    transition: left 0.5s;
+}
+:global(.active){
+    left:0;
+}
+:global(.active),
+:global(.next),
+:global(.prev){
+    display: block;
+}
+
+:global(.next){
+    left:100%;
+}
+:global(.prev){
+    left:-100%;
+}
+:global(.next.left),
+:global(.prev.right){
+    left:0;
+}
+:global(.active.left){
+    left:-100%;
+}
+:global(.active.right){
+    left:100%;
+}

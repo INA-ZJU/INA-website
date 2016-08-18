@@ -1,13 +1,13 @@
 var webpack=require("webpack");
 module.exports={
-    entry:[
-        //'./index',
-        //'./Page/Team/Team',
-        './Page/Department/Department'
-    ],
+    entry: {
+        './Page/Home/build/index':'./index.jsx',
+        './Page/Team/build/Team':'./Page/Team/Team.jsx',
+        './Page/Department/build/Department':'./Page/Department/Department.jsx',
+        './Page/Project/build/Project':'./Page/Project/Project.jsx'
+    },
     output:{
-        path:'./',
-        filename:'run.js'
+        filename:'[name].bundle.js'
     },
     module:{
         loaders:[
