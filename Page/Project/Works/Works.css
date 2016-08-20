@@ -63,7 +63,7 @@
 }
 
 /*--------轮播动效样式--------*/
-:global(.item){
+:global(.works .item){
     width:100%;
     display: none;
     position: absolute;
@@ -73,28 +73,28 @@
     -o-transition: left 0.5s;
     transition: left 0.5s;
 }
-:global(.active){
+:global(.works .active){
     left:0;
 }
-:global(.active),
-:global(.next),
-:global(.prev){
+:global(.works .active),
+:global(.works .next),
+:global(.works .prev){
     display: block;
 }
 
-:global(.next){
+:global(.works .next){
     left:100%;
 }
-:global(.prev){
+:global(.works .prev){
     left:-100%;
 }
-:global(.next.left),
-:global(.prev.right){
+:global(.works .next.left),
+:global(.works .prev.right){
     left:0;
 }
-:global(.active.left){
+:global(.works .active.left){
     left:-100%;
 }
-:global(.active.right){
+:global(.works .active.right){
     left:100%;
 }

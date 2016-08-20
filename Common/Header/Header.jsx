@@ -1,5 +1,6 @@
 var React=require("react");
 var style=require("./Header.css");
+var Link=require("react-router").Link;
 
 var Header=React.createClass({
     render:function(){
@@ -10,12 +11,12 @@ var Header=React.createClass({
                 </div>
                 <div className={style.linkBox+" fr"}>
                     <ul>
-                        <a href="/index.html"><li>首页</li></a>
-                        <a href="/Page/Team/Team.html"><li>团队简介</li></a>
-                        <a href="/Page/Department/Department.html"><li>部门介绍</li></a>
-                        <a href="#"><li>核心成员</li></a>
-                        <a href="/Page/Project/Project.html"><li>成果展示</li></a>
-                        <a href="#"><li>加入我们</li></a>
+                        <Link to="/"><li>首页</li></Link>
+                        <Link to="/team"><li>团队简介</li></Link>
+                        <Link to="/department"><li>部门介绍</li></Link>
+                        <Link to="#"><li>核心成员</li></Link>
+                        <Link to="/project"><li>成果展示</li></Link>
+                        <Link to="#"><li>加入我们</li></Link>
                     </ul>
                 </div>
             </div>

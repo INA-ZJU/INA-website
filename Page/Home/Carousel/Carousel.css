@@ -7,7 +7,7 @@
     height:100%;
     position: relative;
 }
-:global(.item){
+:global(.carousel .item){
     position: absolute;
     display: none;
     -webkit-transition-property: left, width, top;
@@ -21,39 +21,39 @@
     -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
-:global(.slideLeft),
-:global(.slideActive.left),
-:global(.slideLtShow.right){
+:global(.carousel .slideLeft),
+:global(.carousel .slideActive.left),
+:global(.carousel .slideLtShow.right){
     display: block;
     width:25%;
     top:0;
     left: 4.5%;
     z-index:1;
 }
-:global(.slideRight),
-:global(.slideActive.right),
-:global(.slideRtShow.left){
+:global(.carousel .slideRight),
+:global(.carousel .slideActive.right),
+:global(.carousel .slideRtShow.left){
     display: block;
     width:25%;
     top:0;
     left:70%;
     z-index:1;
 }
-:global(.slideActive),
-:global(.slideLeft.right),
-:global(.slideRight.left){
+:global(.carousel .slideActive),
+:global(.carousel .slideLeft.right),
+:global(.carousel .slideRight.left){
     display: block;
     z-index: 9;
     left:27%;
     top:-15.2%;
     width:45%;
 }
-:global(.slideLeft.left),:global(.slideLtShow){
+:global(.carousel .slideLeft.left),:global(.carousel .slideLtShow){
     display: block;
     width:25%;
     left:-25%;
 }
-:global(.slideRight.right),:global(.slideRtShow){
+:global(.carousel .slideRight.right),:global(.carousel .slideRtShow){
     display: block;
     width:25%;
     left:100%;

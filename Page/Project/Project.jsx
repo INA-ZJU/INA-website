@@ -1,11 +1,4 @@
 var React=require("react");
-var ReactDOM=require("react-dom");
-var routeObj=require("react-router");
-var Router=routeObj.Router;
-var Route=routeObj.Route;
-var Link=routeObj.Link;
-var hashHistory=routeObj.hashHistory;
-var IndexRedirect=routeObj.IndexRedirect;
 var Header=require("./../../Common/Header/Header");
 var Footer=require("./../../Common/Footer/Footer");
 var style=require("./Project.css");
@@ -48,32 +41,13 @@ var Project=React.createClass({
         };
         return(
             <div>
-                <Header />
                 <div className={style.container} style={conStyle}>
                     <Tags />
                     {this.props.children}
                 </div>
-                <Footer />
             </div>
         )
     }
 });
 
-var App=React.createClass({
-    render:function(){
-        return(
-            <Router history={hashHistory}>
-                <Route path="/" component={Project}>
-                    <IndexRedirect to="/company"/>
-                    <Route path="/company" component={Company} />
-                    <Route path="/works" component={Works} />
-                </Route>
-            </Router>
-        )
-    }
-});
-
-ReactDOM.render(
-    <App />,
-    document.getElementById("app")
-);
+module.exports=Project;

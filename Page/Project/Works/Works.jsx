@@ -138,7 +138,7 @@ var Works=React.createClass({
             )
         }
         return(
-            <div className={style.works} style={workStyle}>
+            <div className={style.works+" works"} style={workStyle}>
                 <div className={style.slideBox} style={slideStyle}>
                     {slides}
                 </div>

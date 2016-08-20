@@ -33,6 +33,6 @@
     top:0;
     position: absolute;
 }
-:global(.active){
+:global(.infoBox.active){
     right:1.6%;
 }

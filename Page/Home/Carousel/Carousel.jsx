@@ -148,7 +148,7 @@ var Carousel=React.createClass({
             )
         }
         return(
-            <div className={style.carousel} style={styles.autoHeight}>
+            <div className={style.carousel+" carousel"} style={styles.autoHeight}>
                 <div className={style.itemBox} style={styles.autoHeight}>
                     {items}
                 </div>

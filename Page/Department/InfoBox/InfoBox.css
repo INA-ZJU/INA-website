@@ -41,7 +41,7 @@
     top:0;
     z-index:9;
 }
-:global(.box){
+:global(.infoBox .box){
     position: absolute;
     opacity: 0;
     -webkit-transition: opacity 0.5s ease-in;
@@ -50,6 +50,6 @@
     -o-transition: opacity 0.5s ease-in;
     transition: opacity 0.5s ease-in;
 }
-:global(.active){
+:global(.infoBox .active){
     opacity: 1;
 }

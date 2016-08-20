@@ -1,5 +1,4 @@
 var React=require("react");
-var FadeTransGroup=require("react-addons-css-transition-group");
 var style=require("./InfoBox.css");
 var $=require("jquery");
 var Info=require("./Info");
@@ -82,7 +81,7 @@ var InfoBox=React.createClass({
             )
         }.bind(this))
         return(
-            <div className={style.infoBox} style={infoBoxStyle}>
+            <div className={style.infoBox+" infoBox"} style={infoBoxStyle}>
                 {infoList}
             </div>
         )

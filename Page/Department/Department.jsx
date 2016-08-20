@@ -1,5 +1,4 @@
 var React=require("react");
-var ReactDOM=require("react-dom");
 var style=require("./Department.css");
 var $=require("jquery");
 var Header=require("./../../Common/Header/Header");
@@ -76,19 +75,4 @@ var Department=React.createClass({
     }
 });
 
-var App=React.createClass({
-    render:function(){
-        return (
-            <div>
-                <Header />
-                <Department />
-                <Footer />
-            </div>
-        )
-    }
-})
-
-ReactDOM.render(
-    <App />,
-    document.getElementById("app")
-)
+module.exports=Department;

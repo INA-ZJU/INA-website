@@ -1,5 +1,4 @@
 var React=require("react");
-var ReactDOM=require("react-dom");
 var $=require("jquery");
 var Header=require("./../../Common/Header/Header");
 var Footer=require("./../../Common/Footer/Footer");
@@ -67,19 +66,4 @@ var Team=React.createClass({
     }
 });
 
-var App=React.createClass({
-    render:function(){
-        return(
-            <div>
-                <Header />
-                <Team />
-                <Footer />
-            </div>
-        )
-    }
-});
-
-ReactDOM.render(
-    <App />,
-    document.getElementById("app")
-)
+module.exports=Team;

@@ -1,12 +1,10 @@
 var webpack=require("webpack");
 module.exports={
     entry: {
-        './Page/Home/build/index':'./index.jsx',
-        './Page/Team/build/Team':'./Page/Team/Team.jsx',
-        './Page/Department/build/Department':'./Page/Department/Department.jsx',
-        './Page/Project/build/Project':'./Page/Project/Project.jsx'
+        index:'./index.jsx'
     },
     output:{
+        path:"/",
         filename:'[name].bundle.js'
     },
     module:{
