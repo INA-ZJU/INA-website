@@ -5,34 +5,44 @@ var $=require("jquery");
 var Carousel=React.createClass({
     getInitialState:function(){
         return {
-            itemList:[
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-                "/Page/Home/static/example.png",
-            ],
+            itemList:[],
             currActive:1,
             currInfo:"INA纳新",
-            isSlide:0   //检测是否正在轮播
+            isSlide:0,   //防止高频率点击圆点
+            isClick:0   //防止高频率点击箭头
         }
     },
-    componentDidMount:function(){
-        var item=$(".item");
-        item.eq(0).addClass("slideLeft");
-        item.eq(1).addClass("slideActive");
-        item.eq(2).addClass("slideRight");
+    componentWillMount:function(){
+        $.ajax({
+            url:"Backend/ina.php?target=carousel",
+            type:"GET",
+            dataType:"json",
+            success:function(res){
+                if(res.code==0) {
+                    this.setState({
+                        itemList:res.picList
+                    })
+                    var item=$(".carousel .item");
+                    item.eq(0).addClass("slideLeft");
+                    item.eq(1).addClass("slideActive");
+                    item.eq(2).addClass("slideRight");
+                }
+                else alert("获取图片失败!");
+            }.bind(this),
+            error:function(){
+                alert("请检查网络配置!");
+            }
+        });
     },
     circleActive:function(target){
+        console.log(this.state.isSlide)
         if(this.state.isSlide) return;
         var curr=this.state.currActive;
         var diff=(target-curr)>=0?(target-curr):(curr-target);
+        if(target==curr) return;
+        this.setState({
+            isSlide:1
+        });
         if(target>curr) {
             var cl = setInterval(function(){
                 this.slideRight();
@@ -40,10 +50,12 @@ var Carousel=React.createClass({
                 if(!diff) {
                     clearInterval(cl);
                     this.setState({
-                        currActive:target
+                        currActive:target,
+                        currInfo:this.state.itemList[target].picName,
+                        isSlide:0
                     })
                 }
-            }.bind(this),100)
+            }.bind(this),300)
         }
         if(target<curr){
             var cl=setInterval(function(){
@@ -52,22 +64,32 @@ var Carousel=React.createClass({
                 if(!diff) {
                     clearInterval(cl);
                     this.setState({
-                        currActive:target
+                        currActive:target,
+                        currInfo:this.state.itemList[target].picName,
+                        isSlide:0
                     })
                 }
-            }.bind(this),100)
+            }.bind(this),300)
         }
+
     },
-    slideRight:function(){
+    slideRight:function(e){
+        var event=e||window.event;
+        if(event && event.type=="click"){
+            if(this.state.isClick) return;
+            else this.setState({
+                isClick:1
+            })
+        }
         var curr=this.state.currActive,
-            item=$(".item"),
+            item=$(".carousel .item"),
             prev=(curr-1)<0?item.length-1:curr-1,
             next=(curr+1)>=item.length?0:curr+1,
             newPic=(curr+2)>=item.length?curr+2-item.length:curr+2;
         this.setState({
-            currActive:next,
-            isSlide:1
+            currActive:next
         });
+        item.removeClass("left");
         item.eq(curr).addClass("left");
         item.eq(prev).addClass("left");
         item.eq(next).addClass("left");
@@ -81,20 +103,27 @@ var Carousel=React.createClass({
         setTimeout(function(){
             item.eq(prev).removeClass("slideLeft left");
             this.setState({
-                isSlide:0
+                isClick:0
             })
-        }.bind(this),600)
+        }.bind(this),260)
     },
-    slideLeft:function(){
+    slideLeft:function(e){
+        var event=e||window.event;
+        if(event && event.type=="click"){
+            if(this.state.isClick) return;
+            else this.setState({
+                isClick:1
+            })
+        }
         var curr=this.state.currActive,
             item=$(".carousel .item"),
             next=(curr-1)<0?item.length-1:curr-1,
             prev=(curr+1)>=item.length?0:curr+1,
             newPic=(curr-2)<0?item.length+curr-2:curr-2;
         this.setState({
-            currActive:next,
-            isSlide:1
-        })
+            currActive:next
+        });
+        item.removeClass("right");
         item.eq(curr).addClass("right");
         item.eq(prev).addClass("right");
         item.eq(next).addClass("right");
@@ -108,9 +137,9 @@ var Carousel=React.createClass({
         setTimeout(function(){
             item.eq(prev).removeClass("slideRight right");
             this.setState({
-                isSlide:0
+                isClick:0
             })
-        }.bind(this),600)
+        }.bind(this),260)
     },
     render:function(){
         var styles={
@@ -143,7 +172,7 @@ var Carousel=React.createClass({
             );
             items.push(
                 <div className="item" style={styles.item} key={i}>
-                    <img src={this.state.itemList[i]} />
+                    <img src={this.state.itemList[i].picUrl} />
                 </div>
             )
         }

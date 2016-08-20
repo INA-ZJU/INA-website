@@ -15,11 +15,11 @@
     -ms-transition-property: left, width, top;
     -o-transition-property: left, width, top;
     transition-property: left, width, top;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-    -ms-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    -ms-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 :global(.carousel .slideLeft),
 :global(.carousel .slideActive.left),

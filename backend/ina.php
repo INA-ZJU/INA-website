@@ -1,42 +1,36 @@
 <?php
     function myQuery($query)
     {
-        $con = mysql_connect("localhost:3306","root","2016zjuINA");
+        $con = mysqli_connect("127.0.0.1","root","root");
         if (!$con)
         {
-            die('Could not connect: ' . mysql_error());
+            die('Could not connect: ' . mysqli_error());
         }
 
-        mysql_query("set names 'utf8'");
-        mysql_select_db("zjuina", $con);
-        $temp=mysql_query($query);
-        $count=mysql_num_rows($temp);
+        mysqli_query($con,"set names 'utf8'");
+        mysqli_select_db($con,"ina");
+        $temp=mysqli_query($con,$query);
+        $count=mysqli_num_rows($temp);
 
         $result = array();
-        for ($i=0; $i < $count && $i < 5 ; $i++){
-            $row=mysql_fetch_array($temp,'MYSQL_ASSOC');
+        for ($i=0; $i < $count && $i < 4 ; $i++){
+            $row=mysqli_fetch_array($temp,MYSQLI_ASSOC);
             array_push($result, $row);
         }
-        mysql_close($con);
+        mysqli_close($con);
         return $result;
     }
 
     function carousel()
     {
-        if (!isset($_GET['picName'])) {
-            $result = array('code' => 411, 'errMsg'=>'PicName is not given.');
-            echo json_encode($result);
-            return;
-        }
-        $picName=$_GET['picName'];
-        $query=myQuery("select * from carousel where picName='$picName'");
+        $query=myQuery("select * from carousel");
         if (count($query)==0) {
             $result = array('code' => 410, 'errMsg'=>'The picture is not found.');
             echo json_encode($result);
             return;
         }
-        elseif (count($query)==1) {
-            $result = array('code' => 0, 'picUrl'=>$query[0]['picUrl']);
+        else {
+            $result = array('code' => 0, 'picList'=>$query);
             echo json_encode($result);
             return;
         }
@@ -65,7 +59,22 @@
         }
     }
 
-    function project()
+    function project(){
+        $query=myQuery("select * from project");
+        if (count($query)==0) {
+            $result = array('code' => 410, 'errMsg'=>'The project is not found.');
+            echo json_encode($result);
+            return;
+        }
+        else{
+            $result['proList']=$query;
+            $result['code']=0;
+            echo json_encode($result);
+            return;
+        }
+    }
+
+    function getProjectById()
     {
         if (!isset($_GET['pid'])) {
             $result = array('code' => 411, 'errMsg'=>'Pid is not given.');
@@ -123,6 +132,9 @@
                 break;
             case 'project':
                 project();
+                break;
+            case 'projectById':
+                getProjectById();
                 break;
             case 'projectByName':
                 getProjectByName();

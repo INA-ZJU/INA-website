@@ -9,44 +9,7 @@ var $=require("jquery");
 var Works=React.createClass({
     getInitialState:function(){
         return {
-            slideList:[
-                {
-                    img:"/Page/Project/static/showPic.png",
-                    title:"聚课盒子",
-                    text:"返回值一个字符串数组。该数组是通过在 separator 指定的边界处将字符串 stringObject 分割成子串创建的。" +
-                    "返回的数组中的字串不包括 separator 自身。但是，如果 " +
-                    "separator 是包含子表达式的正则表达式，那么返回的数组中包括与这些子表达式匹配的字串（但不包括与整个正则表达式匹配的" +
-                    "文本）。提示和注释注释：如果把空字符串 () 用作 separator，那么 stri" +
-                    "ngObject 中的每个字符之间都会被分割。注释：String.split() 执行的操作与 A" +
-                    "rray.join 执行的操作是相反的。"
-                },
-                {
-                    img:"/Page/Project/static/showPic.png",
-                    title:"聚课fffff盒子",
-                    text:"返回值一个字符串数组。该数组是通过在 separator 指定的边界处将字符串 stringObject 分割成子串创建的。" +
-                    "返回的数组中的字串不包括 separator 自身。但是，如果 " +
-                    "separator 是包含子表达式的正则表达式，那么返回的数组中包括与这些子表达式匹配的字串（但不包括与整个正则表达式匹配的" +
-                    "文本）。提示和注释注释：如果把空字符串 () 用作 separator，那么 stri" +
-                    "ngObject 中的每个字符之间都会被分割。注释：String.split() 执行的操作与 A" +
-                    "rray.join 执行的操作是相反的。"
-                },
-                {
-                    img:"/Page/Project/static/showPic.png",
-                    title:"sdfsdfds",
-                    text:"返回值一个字符串数组。该数组是通过在 separator 指定的边界处将字符串 stringObject 分割成子串创建的。" +
-                    "返回的数组中的字串不包括 separator 自身。但是，如果 "
-                },
-                {
-                    img:"/Page/Project/static/showPic.png",
-                    title:"聚课盒子",
-                    text:"返回值一个字符串数组。该数组是通过在 separator 指定的边界处将字符串 stringObject 分割成子串创建的。" +
-                    "返回的数组中的字串不包括 separator 自身。但是，如果 " +
-                    "separator 是包含子表达式的正则表达式，那么返回的数组中包括与这些子表达式匹配的字串（但不包括与整个正则表达式匹配的" +
-                    "文本）。提示和注释注释：如果把空字符串 () 用作 separator，那么 stri" +
-                    "ngObject 中的每个字符之间都会被分割。注释：String.split() 执行的操作与 A" +
-                    "rray.join 执行的操作是相反的。"
-                },
-            ],
+            slideList:[],
             currActive:0,
             isSlide:0   //检测是否正在轮播
         }
@@ -54,8 +17,33 @@ var Works=React.createClass({
     contextTypes:{
         midHeight:React.PropTypes.number
     },
-    componentDidMount:function(){
-        $(".item").eq(0).addClass("active");
+    componentWillMount:function(){
+        $.ajax({
+            url:"/Backend/ina.php?target=project",
+            type:"GET",
+            dataType:"json",
+            success:function(res){
+                if(res.code==0){
+                    this.setState({
+                        slideList:res.proList
+                    })
+                    $(".works .item").eq(0).addClass("active");
+                    this.autoChange();
+                }
+                else alert("获取项目列表失败!");
+
+            }.bind(this),
+            error:function(){
+                alert("请检查网络配置!")
+            }
+        })
+    },
+    autoChange:function(){
+        setInterval(function(){
+            var curr=this.state.currActive;
+            var next=(curr+1)>=this.state.slideList.length?0:curr+1;
+            this.changePro(next);
+        }.bind(this),5000);
     },
     changePro:function(target){
         if(this.state.isSlide) return;
@@ -64,7 +52,7 @@ var Works=React.createClass({
             currActive:target,
             isSlide:1
         });
-        var item=$(".item"),direction,pos;
+        var item=$(".works .item"),direction,pos;
         if(target>oldPos){
             direction="left";
             pos="next";
@@ -119,15 +107,15 @@ var Works=React.createClass({
                 <div className="item" key={i}>
                     <div className={style.infoBox}>
                         <div className={style.img}>
-                            <img src={item.img} />
+                            <img src={item.picUrl} />
                         </div>
                         <div className={style.intro}>
                             <div className={style.dsec}>
                                 <div className={style.title}>
-                                    {item.title}
+                                    {item.projectName}
                                 </div>
                                 <div className={style.text}>
-                                    {item.text}
+                                    {item.description}
                                 </div>
                             </div>
                             <div className={style.shelter}></div>

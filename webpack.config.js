@@ -4,7 +4,6 @@ module.exports={
         index:'./index.jsx'
     },
     output:{
-        path:"/",
         filename:'[name].bundle.js'
     },
     module:{
