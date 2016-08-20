@@ -21,13 +21,11 @@ var Project=React.createClass({
             midHeight:this.state.midHeight
         }
     },
-    componentWillMount:function(){
+    componentDidMount:function(){
         var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
         this.setState({
             midHeight:midHeight-135
         })
-    },
-    componentDidMount:function(){
         $(window).resize(function(){
             var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
             this.setState({

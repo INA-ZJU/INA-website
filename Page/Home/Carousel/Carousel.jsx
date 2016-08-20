@@ -87,7 +87,7 @@ var Carousel=React.createClass({
     },
     slideLeft:function(){
         var curr=this.state.currActive,
-            item=$(".item"),
+            item=$(".carousel .item"),
             next=(curr-1)<0?item.length-1:curr-1,
             prev=(curr+1)>=item.length?0:curr+1,
             newPic=(curr-2)<0?item.length+curr-2:curr-2;

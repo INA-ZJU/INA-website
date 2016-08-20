@@ -23,13 +23,11 @@ var Department=React.createClass({
             })
         }.bind(this),5000)
     },
-    componentWillMount:function(){
+    componentDidMount:function(){
         var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
         this.setState({
             midHeight:midHeight-135
         })
-    },
-    componentDidMount:function(){
         $(window).resize(function(){
             var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
             this.setState({
