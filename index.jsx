@@ -13,7 +13,7 @@ var Department=require("./Page/Department/Department");
 var Project=require("./Page/Project/Project");
 var Company=require("./Page/Project/Company/Company");
 var Works=require("./Page/Project/Works/Works");
-
+var Member=require("./Page/Member/Member");
 
 var App=React.createClass({
     render:function(){
@@ -36,6 +36,7 @@ var Root=React.createClass({
                     <Route path="/home" component={Home} />
                     <Route path="/team" component={Team} />
                     <Route path="/department" component={Department} />
+                    <Route path="/member" component={Member} />
                     <Route path="/project" component={Project}>
                         <IndexRedirect to="/company" />
                         <Route path="/company" component={Company} />

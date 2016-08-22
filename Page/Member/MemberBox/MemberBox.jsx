@@ -52,3 +52,5 @@ var MemberBox = React.createClass({
     );
   }
 });
+
+module.exports=MemberBox;
