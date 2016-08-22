@@ -73,4 +73,4 @@ var Member=React.createClass({
     }
 });
 
-module.exports=Department;
+module.exports=Member;
