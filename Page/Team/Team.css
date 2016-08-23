@@ -25,6 +25,16 @@
     z-index:11;
     letter-spacing: 1px;
 }
+@media screen and (min-width:1400px) and (max-width:1600px){
+    .infoBox>.info{
+        font-size:18px;
+    }
+}
+@media screen and (min-width:1600px){
+    .infoBox>.info{
+        font-size:22px;
+    }
+}
 .infoBox>.shelter{
     width:100%;
     background-color: #000000;

@@ -30,8 +30,19 @@
     right:0;
     width:85%;
     margin: 20% auto;
+    font-size:16px;
     z-index: 10;
     overflow-y:scroll;
+}
+@media screen and (min-width:1400px) and (max-width:1600px){
+    .infoBox .info>.intro{
+        font-size:18px;
+    }
+}
+@media screen and (min-width:1600px){
+    .infoBox .info>.intro{
+        font-size:22px;
+    }
 }
 .infoBox .info>.shelter{
     position: absolute;
