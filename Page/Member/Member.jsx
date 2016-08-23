@@ -10,7 +10,7 @@ var Member=React.createClass({
     getInitialState:function(){
         return {
             midHeight:0,
-            tagList:["战略/VC部","产品/运营部","技术部","设计部"],
+            tagList:["主席团","战略/VC部","产品/运营部","技术部","设计部"],
             currActive:0    //当前显示部门的key值
         }
     },

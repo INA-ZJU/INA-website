@@ -9,19 +9,19 @@ var MemberBox = React.createClass({
       memberList:[
         {
           memberName: '皓波',
-          picUrl: './member.png',
+          picUrl: '/Page/Member/static/member.png',
           intro:"INA官网开发技术组",
           moreInfo:"浙大计算机系"
         },
         {
           memberName: '奕辉',
-          picUrl: './member.png',
+          picUrl: '/Page/Member/static/member.png',
           intro:"INA官网开发技术组",
           moreInfo:"浙大软件工程系"
         },
         {
           memberName: '昊潜',
-          picUrl: './member.png',
+          picUrl: '/Page/Member/static/member.png',
           intro:"INA官网开发技术组",
           moreInfo:"浙大计算机系+ITP"
         }
@@ -30,9 +30,11 @@ var MemberBox = React.createClass({
   },
 
   render: function() {
+    var left=(window.innerWidth-(window.innerHeight-250)*1.83)/2;
     var boxStyle={
         height:0.65*this.props.midHeight,
-        marginTop:0.23*this.props.midHeight
+        width:window.innerWidth-left,
+        'padding-left':left
     };
     var memberList=this.state.memberList.map(function(item,i){
       return(
@@ -46,7 +48,7 @@ var MemberBox = React.createClass({
         );
     }.bind(this));
     return (
-      <div className="memberListBox" style={boxStyle}>
+      <div className={style.memberListBox} style={boxStyle}>
         {memberList}
       </div>
     );
