@@ -28,7 +28,7 @@ var JoinUs=React.createClass({
         return (
             <div className={style.container} style={conStyle}>
                 <div className={style.frame}>
-                    <img src="static/button.png" className={style.button} onClick={function(){window.location.href="#/wish"}}/>
+                    <img src="/Page/JoinUs/static/button.png" className={style.button} onClick={function(){window.location.href="#/wish"}}/>
                 </div>
             </div>
         )

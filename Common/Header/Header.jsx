@@ -16,7 +16,7 @@ var Header=React.createClass({
                         <Link to="/department"><li>部门介绍</li></Link>
                         <Link to="/member"><li>核心成员</li></Link>
                         <Link to="/project"><li>成果展示</li></Link>
-                        <Link to="#"><li>加入我们</li></Link>
+                        <Link to="/join"><li>加入我们</li></Link>
                     </ul>
                 </div>
             </div>

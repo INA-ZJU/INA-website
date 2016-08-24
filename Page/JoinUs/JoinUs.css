@@ -1,11 +1,11 @@
 .container{
-    background: url("static/background.png") center;
+    background: url("/Page/JoinUs/static/background.png") center;
     background-size:cover;
     position: relative;
 }
 
 .frame{
-    background: url("static/frame.png");
+    background: url("/Page/JoinUs/static/frame.png");
     width: 590px;
     height: 800px;
     position: absolute;
