@@ -5,7 +5,8 @@ var $=require("jquery");
 var Wish=React.createClass({
     getInitialState:function(){
         return {
-            midHeight:0
+            midHeight:0,
+            hover: 0
         }
     },
     componentDidMount:function(){
@@ -20,12 +21,24 @@ var Wish=React.createClass({
             })
         }.bind(this))
     },
-    hover: function(target){
+    hover: function(targetNum, event){
+        var target = event.target;
+        this.setState({hover:targetNum});
 
+        $('#cover').fadeIn(500);
+    },
+    mouseOut: function(){
+        this.setState({hover:0});
+        $('#cover').fadeOut(500);
     },
     render:function(){
         var conStyle={
             height:this.state.midHeight
+        };
+
+        var tdStyle = {
+            zIndex:100,
+            position: 'relative'
         };
 
         return (
@@ -34,22 +47,30 @@ var Wish=React.createClass({
                     <caption className={style.title}>请选择你的志愿部门</caption>
                     <tbody>
                         <tr>
-                            <td ref="td1" className={style.td}>
-                                <img src="/Page/Wish/static/choice-vc.png" className={style.choice} onMouseMove={function(){this.hover("td1")}.bind(this)}/>
+                            <td style={(this.state.hover==1)?tdStyle:null} className={style.td}>
+                                <img src="/Page/Wish/static/choice-vc.png" className={style.choice}
+                                     onMouseMove={function(event){this.hover(1, event)}.bind(this)} onMouseOut={this.mouseOut}/>
+                                <big className={style.text}>战略/VC部</big>
                             </td>
-                            <td ref="td2" className={style.td}>
-                                <img src="/Page/Wish/static/choice-pmer.png" className={style.choice} onMouseMove={function(){this.hover("td2")}.bind(this)}/>
+                            <td style={(this.state.hover==2)?tdStyle:null} className={style.td}>
+                                <img src="/Page/Wish/static/choice-pmer.png" className={style.choice}
+                                     onMouseMove={function(event){this.hover(2, event)}.bind(this)} onMouseOut={this.mouseOut}/>
+                                <big className={style.text}>产品运营部</big>
                             </td>
-                            <td ref="td3" className={style.td}>
-                                <img src="/Page/Wish/static/choice-tech.png" className={style.choice} onMouseMove={function(){this.hover("td3")}.bind(this)}/>
+                            <td style={(this.state.hover==3)?tdStyle:null} className={style.td}>
+                                <img src="/Page/Wish/static/choice-tech.png" className={style.choice}
+                                     onMouseMove={function(event){this.hover(3, event)}.bind(this)} onMouseOut={this.mouseOut}/>
+                                <big className={style.text}>技术部</big>
                             </td>
-                            <td ref="td4" className={style.td}>
-                                <img src="/Page/Wish/static/choice-design.png" className={style.choice} onMouseMove={function(){this.hover("td4")}.bind(this)}/>
+                            <td style={(this.state.hover==4)?tdStyle:null} className={style.td}>
+                                <img src="/Page/Wish/static/choice-design.png" className={style.choice}
+                                     onMouseMove={function(event){this.hover(4, event)}.bind(this)} onMouseOut={this.mouseOut}/>
+                                <big className={style.text}>设计部</big>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <div ref="cover" className={style.cover}></div>
+                <div id="cover" className={style.cover}></div>
             </div>
         )
     }

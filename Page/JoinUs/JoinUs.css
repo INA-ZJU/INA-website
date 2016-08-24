@@ -6,14 +6,9 @@
 
 .frame{
     background: url("/Page/JoinUs/static/frame.png");
-<<<<<<< HEAD
-    width: 590px;
-    height: 800px;
-=======
     background-size: contain;
     width: 295px;
     height: 400px;
->>>>>>> 3c66ccae0b259997f6ea2093fb0423630a423efd
     position: absolute;
     top: 83px;
     right: 20px;

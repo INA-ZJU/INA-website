@@ -27183,7 +27183,7 @@
 	                    ),
 	                    React.createElement(
 	                        Link,
-	                        { to: "#" },
+	                        { to: "/join" },
 	                        React.createElement(
 	                            "li",
 	                            null,
@@ -39825,7 +39825,8 @@
 
 	    getInitialState: function () {
 	        return {
-	            midHeight: 0
+	            midHeight: 0,
+	            hover: 0
 	        };
 	    },
 	    componentDidMount: function () {
@@ -39840,10 +39841,24 @@
 	            });
 	        }.bind(this));
 	    },
-	    hover: function (target) {},
+	    hover: function (targetNum, event) {
+	        var target = event.target;
+	        this.setState({ hover: targetNum });
+
+	        $('#cover').fadeIn(500);
+	    },
+	    mouseOut: function () {
+	        this.setState({ hover: 0 });
+	        $('#cover').fadeOut(500);
+	    },
 	    render: function () {
 	        var conStyle = {
 	            height: this.state.midHeight
+	        };
+
+	        var tdStyle = {
+	            zIndex: 100,
+	            position: 'relative'
 	        };
 
 	        return React.createElement(
@@ -39865,36 +39880,60 @@
 	                        null,
 	                        React.createElement(
 	                            "td",
-	                            { ref: "td1", className: style.td },
-	                            React.createElement("img", { src: "/Page/Wish/static/choice-vc.png", className: style.choice, onMouseMove: function () {
-	                                    this.hover("td1");
-	                                }.bind(this) })
+	                            { style: this.state.hover == 1 ? tdStyle : null, className: style.td },
+	                            React.createElement("img", { src: "/Page/Wish/static/choice-vc.png", className: style.choice,
+	                                onMouseMove: function (event) {
+	                                    this.hover(1, event);
+	                                }.bind(this), onMouseOut: this.mouseOut }),
+	                            React.createElement(
+	                                "big",
+	                                { className: style.text },
+	                                "战略/VC部"
+	                            )
 	                        ),
 	                        React.createElement(
 	                            "td",
-	                            { ref: "td2", className: style.td },
-	                            React.createElement("img", { src: "/Page/Wish/static/choice-pmer.png", className: style.choice, onMouseMove: function () {
-	                                    this.hover("td2");
-	                                }.bind(this) })
+	                            { style: this.state.hover == 2 ? tdStyle : null, className: style.td },
+	                            React.createElement("img", { src: "/Page/Wish/static/choice-pmer.png", className: style.choice,
+	                                onMouseMove: function (event) {
+	                                    this.hover(2, event);
+	                                }.bind(this), onMouseOut: this.mouseOut }),
+	                            React.createElement(
+	                                "big",
+	                                { className: style.text },
+	                                "产品运营部"
+	                            )
 	                        ),
 	                        React.createElement(
 	                            "td",
-	                            { ref: "td3", className: style.td },
-	                            React.createElement("img", { src: "/Page/Wish/static/choice-tech.png", className: style.choice, onMouseMove: function () {
-	                                    this.hover("td3");
-	                                }.bind(this) })
+	                            { style: this.state.hover == 3 ? tdStyle : null, className: style.td },
+	                            React.createElement("img", { src: "/Page/Wish/static/choice-tech.png", className: style.choice,
+	                                onMouseMove: function (event) {
+	                                    this.hover(3, event);
+	                                }.bind(this), onMouseOut: this.mouseOut }),
+	                            React.createElement(
+	                                "big",
+	                                { className: style.text },
+	                                "技术部"
+	                            )
 	                        ),
 	                        React.createElement(
 	                            "td",
-	                            { ref: "td4", className: style.td },
-	                            React.createElement("img", { src: "/Page/Wish/static/choice-design.png", className: style.choice, onMouseMove: function () {
-	                                    this.hover("td4");
-	                                }.bind(this) })
+	                            { style: this.state.hover == 4 ? tdStyle : null, className: style.td },
+	                            React.createElement("img", { src: "/Page/Wish/static/choice-design.png", className: style.choice,
+	                                onMouseMove: function (event) {
+	                                    this.hover(4, event);
+	                                }.bind(this), onMouseOut: this.mouseOut }),
+	                            React.createElement(
+	                                "big",
+	                                { className: style.text },
+	                                "设计部"
+	                            )
 	                        )
 	                    )
 	                )
 	            ),
-	            React.createElement("div", { ref: "cover", className: style.cover })
+	            React.createElement("div", { id: "cover", className: style.cover })
 	        );
 	    }
 	});
@@ -39936,7 +39975,7 @@
 
 
 	// module
-	exports.push([module.id, ".OMrxaKG8J-WTQ-Q04Lz2x{\r\n    background: url(\"/Page/Wish/static/background.png\") center;\r\n    background-size:cover;\r\n    position: relative;\r\n}\r\n\r\n._1JJSiwJTCtSM7Hjkp6UwEi{\r\n    width: 80%;\r\n    height: 50%;\r\n    left:10%;\r\n    top:20%;\r\n    position: absolute;\r\n    text-align: center;\r\n    vertical-align: center;\r\n}\r\n\r\n._3oQ0XvCC7qHEKzwtH_DKdb{\r\n    font-size: 30px;\r\n    color: #FFFFFF;\r\n    z-index: 100;\r\n    text-align: center;\r\n    line-height: 60px;\r\n}\r\n\r\n._1iZFN_-Sx-d8XrlGGY80NL{\r\n    width: 25%;\r\n}\r\n\r\n._3Ad5iBEJY6xXmoLJqTH1rE{\r\n    width: 120px;\r\n    height: 120px;\r\n    margin: 15px;\r\n}\r\n\r\n._3Ad5iBEJY6xXmoLJqTH1rE:hover{\r\n    width: 150px;\r\n    height: 150px;\r\n    margin: 0px;\r\n}\r\n", ""]);
+	exports.push([module.id, ".OMrxaKG8J-WTQ-Q04Lz2x{\r\n    background: url(\"/Page/Wish/static/background.png\") center;\r\n    background-size:cover;\r\n    position: relative;\r\n}\r\n\r\n._1JJSiwJTCtSM7Hjkp6UwEi{\r\n    width: 80%;\r\n    height: 50%;\r\n    left:10%;\r\n    top:20%;\r\n    position: absolute;\r\n    text-align: center;\r\n    vertical-align: center;\r\n}\r\n\r\n._3oQ0XvCC7qHEKzwtH_DKdb{\r\n    font-size: 30px;\r\n    color: #FFFFFF;\r\n    z-index: 100;\r\n    position: relative;\r\n    text-align: center;\r\n    line-height: 60px;\r\n}\r\n\r\n._1iZFN_-Sx-d8XrlGGY80NL{\r\n    width: 25%;\r\n}\r\n\r\n._3Ad5iBEJY6xXmoLJqTH1rE{\r\n    width: 120px;\r\n    height: 120px;\r\n    margin: 15px;\r\n    border-radius:50%;\r\n    overflow:hidden;\r\n    transition: width 0.5s, height 0.5s, margin 0.5s;\r\n    -moz-transition: width 0.5s, height 0.5s, margin 0.5s; /* Firefox 4 */\r\n    -webkit-transition: width 0.5s, height 0.5s, margin 0.5s; /* Safari 和 Chrome */\r\n    -o-transition: width 0.5s, height 0.5s, margin 0.5s; /* Opera */\r\n}\r\n\r\n._3Ad5iBEJY6xXmoLJqTH1rE:hover{\r\n    width: 150px;\r\n    height: 150px;\r\n    margin: 0;\r\n    animation:_3ir4GCBlKVowwAHDM_MqGm 2s infinite;\r\n    -moz-animation:_3ir4GCBlKVowwAHDM_MqGm 2s infinite; /* Firefox */\r\n    -webkit-animation:_3ir4GCBlKVowwAHDM_MqGm 2s infinite; /* Safari and Chrome */\r\n    -o-animation:_3ir4GCBlKVowwAHDM_MqGm 2s infinite; /* Opera */\r\n}\r\n\r\n@keyframes _3ir4GCBlKVowwAHDM_MqGm\r\n{\r\n    0% {box-shadow:0 0 0 0 #FFFFFF}\r\n    50% {box-shadow:0 0 30px 0 #FFFFFF}\r\n    100% {box-shadow:0 0 0 0 #FFFFFF}\r\n}\r\n\r\n@-moz-keyframes _3ir4GCBlKVowwAHDM_MqGm /* Firefox */\r\n{\r\n    0% {box-shadow:0 0 0 0 #FFFFFF}\r\n    50% {box-shadow:0 0 30px 0 #FFFFFF}\r\n    100% {box-shadow:0 0 0 0 #FFFFFF}\r\n}\r\n\r\n@-webkit-keyframes _3ir4GCBlKVowwAHDM_MqGm /* Safari and Chrome */\r\n{\r\n    0% {box-shadow:0 0 0 0 #FFFFFF}\r\n    50% {box-shadow:0 0 30px 0 #FFFFFF}\r\n    100% {box-shadow:0 0 0 0 #FFFFFF}\r\n}\r\n\r\n@-o-keyframes _3ir4GCBlKVowwAHDM_MqGm /* Opera */\r\n{\r\n    0% {box-shadow:0 0 0 0 #FFFFFF}\r\n    50% {box-shadow:0 0 30px 0 #FFFFFF}\r\n    100% {box-shadow:0 0 0 0 #FFFFFF}\r\n}\r\n\r\n._3fyLQWzyBxqeHbChCmgCxz{\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    background: #000000;\r\n    z-index: 50;\r\n    position: relative;\r\n    filter:alpha(opacity=50);\r\n    -moz-opacity:0.5;\r\n    opacity:0.5;\r\n}\r\n\r\n._35wZ0AJvtfSKuZdHHNUxyE{\r\n    display: block;\r\n    color: #FFFFFF;\r\n}\r\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -39944,7 +39983,10 @@
 		"content": "_1JJSiwJTCtSM7Hjkp6UwEi",
 		"title": "_3oQ0XvCC7qHEKzwtH_DKdb",
 		"td": "_1iZFN_-Sx-d8XrlGGY80NL",
-		"choice": "_3Ad5iBEJY6xXmoLJqTH1rE"
+		"choice": "_3Ad5iBEJY6xXmoLJqTH1rE",
+		"shadow": "_3ir4GCBlKVowwAHDM_MqGm",
+		"cover": "_3fyLQWzyBxqeHbChCmgCxz",
+		"text": "_35wZ0AJvtfSKuZdHHNUxyE"
 	};
 
 /***/ }
