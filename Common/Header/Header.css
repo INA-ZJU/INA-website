@@ -3,6 +3,7 @@
     height:75px;
     min-width:1000px;
     background: url("/Common/Header/static/header.png") center;
+    background-size:cover;
 }
 .logoBox{
     margin-left: 8%;
