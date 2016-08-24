@@ -61,6 +61,7 @@
 	var Works = __webpack_require__(273);
 	var Member = __webpack_require__(279);
 	var Join = __webpack_require__(286);
+	var Wish = __webpack_require__(289);
 
 	var App = React.createClass({
 	    displayName: "App",
@@ -98,7 +99,8 @@
 	                    React.createElement(Route, { path: "/company", component: Company }),
 	                    React.createElement(Route, { path: "/works", component: Works })
 	                ),
-	                React.createElement(Route, { path: "/join", component: Join })
+	                React.createElement(Route, { path: "/join", component: Join }),
+	                React.createElement(Route, { path: "/wish", component: Wish })
 	            )
 	        );
 	    }
@@ -39808,6 +39810,141 @@
 		"container": "_3VgYLNEwDwgMogjuVmkuut",
 		"frame": "_3cNBajnUJ-uqabi1U-dnYG",
 		"button": "_3YDLsLAMmntXtiaw5pF2aM"
+	};
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var style = __webpack_require__(290);
+	var $ = __webpack_require__(244);
+
+	var Wish = React.createClass({
+	    displayName: "Wish",
+
+	    getInitialState: function () {
+	        return {
+	            midHeight: 0
+	        };
+	    },
+	    componentDidMount: function () {
+	        var midHeight = document.body.clientHeight || document.documentElement.clientHeight;
+	        this.setState({
+	            midHeight: midHeight - 135
+	        });
+	        $(window).resize(function () {
+	            var midHeight = document.body.clientHeight || document.documentElement.clientHeight;
+	            this.setState({
+	                midHeight: midHeight - 135
+	            });
+	        }.bind(this));
+	    },
+	    hover: function (target) {},
+	    render: function () {
+	        var conStyle = {
+	            height: this.state.midHeight
+	        };
+
+	        return React.createElement(
+	            "div",
+	            { className: style.container, style: conStyle },
+	            React.createElement(
+	                "table",
+	                { className: style.content },
+	                React.createElement(
+	                    "caption",
+	                    { className: style.title },
+	                    "请选择你的志愿部门"
+	                ),
+	                React.createElement(
+	                    "tbody",
+	                    null,
+	                    React.createElement(
+	                        "tr",
+	                        null,
+	                        React.createElement(
+	                            "td",
+	                            { ref: "td1", className: style.td },
+	                            React.createElement("img", { src: "/Page/Wish/static/choice-vc.png", className: style.choice, onMouseMove: function () {
+	                                    this.hover("td1");
+	                                }.bind(this) })
+	                        ),
+	                        React.createElement(
+	                            "td",
+	                            { ref: "td2", className: style.td },
+	                            React.createElement("img", { src: "/Page/Wish/static/choice-pmer.png", className: style.choice, onMouseMove: function () {
+	                                    this.hover("td2");
+	                                }.bind(this) })
+	                        ),
+	                        React.createElement(
+	                            "td",
+	                            { ref: "td3", className: style.td },
+	                            React.createElement("img", { src: "/Page/Wish/static/choice-tech.png", className: style.choice, onMouseMove: function () {
+	                                    this.hover("td3");
+	                                }.bind(this) })
+	                        ),
+	                        React.createElement(
+	                            "td",
+	                            { ref: "td4", className: style.td },
+	                            React.createElement("img", { src: "/Page/Wish/static/choice-design.png", className: style.choice, onMouseMove: function () {
+	                                    this.hover("td4");
+	                                }.bind(this) })
+	                        )
+	                    )
+	                )
+	            ),
+	            React.createElement("div", { ref: "cover", className: style.cover })
+	        );
+	    }
+	});
+
+	module.exports = Wish;
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(291);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(239)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?modules!./Wish.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?modules!./Wish.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(238)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".OMrxaKG8J-WTQ-Q04Lz2x{\r\n    background: url(\"/Page/Wish/static/background.png\") center;\r\n    background-size:cover;\r\n    position: relative;\r\n}\r\n\r\n._1JJSiwJTCtSM7Hjkp6UwEi{\r\n    width: 80%;\r\n    height: 50%;\r\n    left:10%;\r\n    top:20%;\r\n    position: absolute;\r\n    text-align: center;\r\n    vertical-align: center;\r\n}\r\n\r\n._3oQ0XvCC7qHEKzwtH_DKdb{\r\n    font-size: 30px;\r\n    color: #FFFFFF;\r\n    z-index: 100;\r\n    text-align: center;\r\n    line-height: 60px;\r\n}\r\n\r\n._1iZFN_-Sx-d8XrlGGY80NL{\r\n    width: 25%;\r\n}\r\n\r\n._3Ad5iBEJY6xXmoLJqTH1rE{\r\n    width: 120px;\r\n    height: 120px;\r\n    margin: 15px;\r\n}\r\n\r\n._3Ad5iBEJY6xXmoLJqTH1rE:hover{\r\n    width: 150px;\r\n    height: 150px;\r\n    margin: 0px;\r\n}\r\n", ""]);
+
+	// exports
+	exports.locals = {
+		"container": "OMrxaKG8J-WTQ-Q04Lz2x",
+		"content": "_1JJSiwJTCtSM7Hjkp6UwEi",
+		"title": "_3oQ0XvCC7qHEKzwtH_DKdb",
+		"td": "_1iZFN_-Sx-d8XrlGGY80NL",
+		"choice": "_3Ad5iBEJY6xXmoLJqTH1rE"
 	};
 
 /***/ }

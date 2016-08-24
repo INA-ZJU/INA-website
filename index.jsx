@@ -15,6 +15,7 @@ var Company=require("./Page/Project/Company/Company");
 var Works=require("./Page/Project/Works/Works");
 var Member=require("./Page/Member/Member");
 var Join=require("./Page/JoinUS/JoinUS");
+var Wish=require("./Page/Wish/Wish");
 
 var App=React.createClass({
     render:function(){
@@ -44,6 +45,7 @@ var Root=React.createClass({
                         <Route path="/works" component={Works} />
                     </Route>
                     <Route path="/join" component={Join} />
+                    <Route path="/wish" component={Wish} />
                 </Route>
             </Router>
         )
