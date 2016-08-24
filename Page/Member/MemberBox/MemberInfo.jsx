@@ -29,7 +29,10 @@ var MemberInfo = React.createClass({
       }
     }.bind(this), 25);
   },
-
+  componentWillUnmount:function(){
+    clearInterval(this.timer);
+  }
+  ,
   render: function() {
     var height=window.innerHeight-250;
     //按照屏幕高度为窗口高度-header footer的高度和上下留空来计算其它高度
@@ -43,8 +46,8 @@ var MemberInfo = React.createClass({
     var boxStyle={
       height:height,
       width:height*0.545,
-      'margin-left':0,
-      'margin-right':height*0.0966,
+      marginLeft:0,
+      marginRight:height*0.0966,
     }
     var imgStyle={
       height:height*0.75
