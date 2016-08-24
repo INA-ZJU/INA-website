@@ -1,0 +1,24 @@
+.container{
+    background: url("static/background.png") center;
+    background-size:cover;
+    position: relative;
+}
+
+.frame{
+    background: url("static/frame.png");
+    width: 590px;
+    height: 800px;
+    position: absolute;
+    top:410px;
+    right: 20px;
+}
+
+.button{
+    position: absolute;
+    top:655px;
+    left:220px;
+}
+
+.button :hover{
+    cursor: pointer;
+}
