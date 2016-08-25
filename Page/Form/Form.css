@@ -1,0 +1,138 @@
+.container{
+    background: url("/Page/Form/static/background.png") center;
+    background-size:cover;
+    position: relative;
+    overflow: auto;
+}
+
+.frame{
+    background: url("/Page/Form/static/form.png");
+    background-size: cover;
+    width: 70%;
+    margin: auto 15%;
+    padding: 20px 20px;
+}
+
+.head{
+    color: #000;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: -5px -5px 10px #7f7f7f;
+    text-align: center;
+    margin: 30px auto 50px auto;
+}
+
+.content{
+    width:80%;
+    margin:20px 10%;
+}
+
+.title{
+    margin-left: -20px;
+    text-align: left;
+}
+
+.titleImg{
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.titleText{
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5cd37;
+    text-shadow: -2px -2px 5px #000;
+    vertical-align: middle;
+    margin: auto 10px;
+}
+
+.baseinfo{
+    width: 50%;
+}
+
+.baseinfo>tbody>tr{
+    height: 30px;
+}
+
+.label{
+    width:25%;
+}
+
+.label>small{
+    color: #FF0000;
+    font-size: 15px;
+}
+
+.input{
+    background-color: inherit;
+    border: 1px solid #7f7f7f;
+    border-radius: 2px;
+    width: 80%;
+    height: 25px;
+    padding: 1px 5px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+
+.sex{
+    width:80%;
+}
+
+.radio{
+    margin-right: 10px;
+}
+
+.introduction{
+    width: 100%;
+}
+
+.introduction>tbody>tr{
+    height: 30px;
+}
+
+.label>small{
+    color: inherit;
+    font-size: 15px;
+}
+
+.introduction>tbody>tr>.label{
+    width: 12.5%;
+}
+
+.introduction>tbody>tr>td>.input{
+    width: 100%;
+}
+
+.introduction>tbody>tr{
+    min-height: 30px;
+}
+
+.skills{
+    width: 100%;
+}
+
+.skills>tbody>tr>td{
+    width: 20%;
+}
+
+.skills>tbody>tr>td>.input{
+    width: 100%;
+}
+
+.area{
+    background-color: inherit;
+    border: 1px solid #7f7f7f;
+    border-radius: 2px;
+    width: 100%;
+    padding: 1px 5px;
+    height: 200px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+
+.areaTr{
+    vertical-align: top;
+}
