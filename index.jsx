@@ -16,6 +16,7 @@ var Works=require("./Page/Project/Works/Works");
 var Member=require("./Page/Member/Member");
 var Join=require("./Page/JoinUS/JoinUS");
 var Wish=require("./Page/Wish/Wish");
+var Form=require("./Page/Form/Form");
 
 var App=React.createClass({
     render:function(){
@@ -46,6 +47,7 @@ var Root=React.createClass({
                     </Route>
                     <Route path="/join" component={Join} />
                     <Route path="/wish" component={Wish} />
+                    <Route path="/form" component={Form} />
                 </Route>
             </Router>
         )
