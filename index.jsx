@@ -35,7 +35,7 @@ var Root=React.createClass({
             <Router history={hashHistory}>
                 <Route path="/" component={App}>
                     <IndexRedirect to="/home" />
-                    <Route path="/home" component={Home} title="首页"/>
+                    <Route path="/home" component={Home} />
                     <Route path="/team" component={Team} />
                     <Route path="/department" component={Department} />
                     <Route path="/member" component={Member} />
