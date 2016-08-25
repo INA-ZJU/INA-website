@@ -1,12 +1,14 @@
-var React=require("react");
+var React=require('react');
 var style=require("./MemberInfo.css");
+var $=require("jquery");
 
 var MemberInfo = React.createClass({
   getInitialState: function() {
     return{
       divOnHover:false,
-      width:document.body.clientWidth,
-      opacity:0
+      opacity:0,
+      currActive:-1,
+      flag:true
     }
   },
 
@@ -20,21 +22,35 @@ var MemberInfo = React.createClass({
 
   componentDidMount: function () {
     this.timer = setInterval(function () {
-      this.setState({width:document.body.clientWidth});
+      //以下是鼠标覆盖时间的动画
       if(this.state.divOnHover){
-        if(this.state.opacity<0.8)this.setState({opacity: this.state.opacity+0.05});
+        if(this.state.opacity< 0.8)this.setState({opacity: this.state.opacity+0.05});
       }
       else if(this.state.opacity!=0){
         this.setState({opacity: 0});
       }
+      //以下是切换Tag的动画效果
+      if (this.state.currActive!=this.props.currActive){
+        this.setState({currActive: this.props.currActive,flag:true});
+        $('.'+style.memberInfoBox).removeClass(style.tansition);
+      }
+      else{
+        // if(this.state.opacity< 1)this.setState({opacity: this.state.opacity+0.01,flag:false});
+        $('.'+style.memberInfoBox).addClass(style.tansition);
+      }
     }.bind(this), 25);
   },
+
   componentWillUnmount:function(){
     clearInterval(this.timer);
   }
   ,
   render: function() {
-    var height=window.innerHeight-250;
+    var height=document.body.clientHeight-250;
+    if (document.body.clientWidth*0.33<=height) {
+      height=document.body.clientWidth*0.33;
+    }
+    var width=height*0.545;
     //按照屏幕高度为窗口高度-header footer的高度和上下留空来计算其它高度
     var moreInfoStyle={
       height:height*0.682,
@@ -45,7 +61,7 @@ var MemberInfo = React.createClass({
     };
     var boxStyle={
       height:height,
-      width:height*0.545,
+      width:width,
       marginLeft:0,
       marginRight:height*0.0966,
     }
@@ -78,7 +94,7 @@ var MemberInfo = React.createClass({
             <label className={style.memberInfoOnHover}>{this.props.intro}</label>
           </div>
         </div>
-        )
+      )
     }
    }
 });
