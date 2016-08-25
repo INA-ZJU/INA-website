@@ -1,0 +1,21 @@
+.activeTag{
+    color:black;
+    background-color: #f5cd37;
+    width:130px;
+    height:40px;
+    line-height:40px;
+    font-size:18px;
+    display: inline-block;
+    margin-left: 3%;
+    margin-right:3%;
+    border: 1px solid #f5cd37;
+    cursor:pointer;
+}
+.pointer{
+    width:0;
+    height:0;
+    border-left:10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top:10px solid #f5cd37;
+    margin:0px auto;
+}

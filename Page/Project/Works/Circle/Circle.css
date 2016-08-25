@@ -1,0 +1,48 @@
+.circle{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    border-radius: 100%;
+    margin-right: 15px;
+    margin-left:15px;
+    background-color: #f5cd37;
+    cursor:pointer;
+}
+.circle>.ltline{
+    height:1px;
+    width:30px;
+    margin-left: 20px;
+    margin-top: 9px;
+    background-color: #f5cd37;
+}
+.circle>.rtline{
+    height:1px;
+    width:30px;
+    margin-left: -30px;
+    margin-top: 9px;
+    background-color: #f5cd37;
+}
+.activeCircle{
+    position: relative;
+    display: inline-block;
+    height:31px;
+}
+.bigCircle{
+
+    width:40px;
+    height:20px;
+    border-radius: 40px 40px 0 0;
+    margin-right: 15px;
+    margin-left:15px;
+    border:1px solid #f5cd37;
+    border-bottom: 0px;
+    cursor:pointer;
+}
+.bigCircle>.smCircle{
+    width:34px;
+    height:34px;
+    border-radius: 100%;
+    background-color: #f5cd37;
+    margin-top:4px;
+    margin-left: 3px;
+}

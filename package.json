@@ -1,0 +1,28 @@
+{
+  "name": "ina",
+  "version": "1.0.0",
+  "description": "INA website",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "jquery": "^3.1.0",
+    "jsx-loader": "^0.13.2",
+    "react": "^15.3.0",
+    "react-addons-css-transition-group": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-router": "^2.6.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress --colors"
+  },
+  "author": "",
+  "license": "MIT"
+}

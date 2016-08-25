@@ -1,0 +1,63 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "Microsoft YaHei","Microsoft YaHei UI",sans-serif;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    min-width:1000px;
+    min-height:600px;
+    height:100vh;
+    position: relative;
+}
+img{
+    width:100%;
+    height:100%;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.cl{
+    clear:both;
+}
+::-webkit-scrollbar
+{
+    width: 10px;
+    height: 10px;
+}
+
+/* webkit内核 浏览器滚动条样式修改*/
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #999999;
+    opacity: 0.8;
+}
+
+/* IE 滚动条样式 */
+html{
+    scrollbar-arrow-color: #676769;  /*三角箭头的颜色*/
+    scrollbar-face-color: #999;  /*立体滚动条的颜色*/
+    scrollbar-3dlight-color: #676769;  /*立体滚动条亮边的颜色*/
+    scrollbar-shadow-color:#676769;
+    scrollbar-base-color:#999;  /*滚动条的基本颜色*/
+    -ms-scrollbar-track-color: #676769;
+}

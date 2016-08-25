@@ -1,0 +1,66 @@
+.infoBox{
+    position: absolute;
+    width:80%;
+    left:0;
+    right:0;
+    margin:auto;
+}
+.infoBox .img{
+    width:60%;
+    float:left;
+}
+.infoBox .info{
+    width:40%;
+    height:100%;
+    color:white;
+    float:left;
+    position: relative;
+}
+.infoBox .info>.block{
+    position: absolute;
+    left:0;
+    right:0;
+    width:50px;
+    height:50px;
+    background-color: #f5cd37;
+}
+.infoBox .info>.intro{
+    position: relative;
+    left:0;
+    right:0;
+    width:85%;
+    margin: 20% auto;
+    font-size:16px;
+    z-index: 10;
+    overflow-y:scroll;
+}
+@media screen and (min-width:1400px) and (max-width:1600px){
+    .infoBox .info>.intro{
+        font-size:18px;
+    }
+}
+@media screen and (min-width:1600px){
+    .infoBox .info>.intro{
+        font-size:22px;
+    }
+}
+.infoBox .info>.shelter{
+    position: absolute;
+    width:100%;
+    background-color: black;
+    opacity: 0.1;
+    top:0;
+    z-index:9;
+}
+:global(.infoBox .box){
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in;
+    -moz-transition: opacity 0.5s ease-in;
+    -ms-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in;
+}
+:global(.infoBox .active){
+    opacity: 1;
+}

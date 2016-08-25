@@ -1,0 +1,27 @@
+.container{
+    background: url("/Page/JoinUs/static/background.png") center;
+    background-size:cover;
+    position: relative;
+}
+
+.frame{
+    background: url("/Page/JoinUs/static/frame.png");
+    background-size: contain;
+    width: 295px;
+    height: 400px;
+    position: absolute;
+    top: 83px;
+    right: 20px;
+}
+
+.button{
+    position: absolute;
+    top: 280px;
+    right: 5px;
+    width: 170px;
+    height: 56px;
+}
+
+.button:hover{
+    cursor: pointer;
+}
