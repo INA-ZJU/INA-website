@@ -5,6 +5,7 @@ var Header=require("./../../Common/Header/Header");
 var Footer=require("./../../Common/Footer/Footer");
 var InfoBox=require("./InfoBox/InfoBox");
 var ActiveTag=require("./ActiveTag/ActiveTag");
+var Helmet=require("react-helmet");
 
 var Department=React.createClass({
     getInitialState:function(){
@@ -61,6 +62,10 @@ var Department=React.createClass({
         }.bind(this));
         return (
             <div className={style.container} style={conStyle}>
+                <Helmet
+                    title="部门介绍"
+                    titleTemplate="%s | 浙江大学互联网协会(INA)"
+                />
                 <div className={style.tagBox}>
                     {tags}
                 </div>

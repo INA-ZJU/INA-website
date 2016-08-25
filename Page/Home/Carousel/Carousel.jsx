@@ -14,9 +14,9 @@ var Carousel=React.createClass({
     },
     componentWillMount:function(){
         $.ajax({
-            url:"Backend/ina.php?target=carousel",
+            url:"http://114.215.144.43/ina.php?target=carousel",
             type:"GET",
-            dataType:"json",
+            dataType:"jsonp",
             success:function(res){
                 if(res.code==0) {
                     this.setState({

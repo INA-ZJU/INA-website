@@ -1,6 +1,7 @@
 var React=require("react");
 var style=require("./JoinUs.css");
 var $=require("jquery");
+var Helmet=require("react-helmet");
 
 var JoinUs=React.createClass({
     getInitialState:function(){
@@ -27,6 +28,10 @@ var JoinUs=React.createClass({
 
         return (
             <div className={style.container} style={conStyle}>
+                <Helmet
+                    title="加入我们"
+                    titleTemplate="%s | 浙江大学互联网协会(INA)"
+                />
                 <div className={style.frame}>
                     <img src="/Page/JoinUs/static/button.png" className={style.button} onClick={function(){window.location.href="#/wish"}}/>
                 </div>

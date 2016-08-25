@@ -14,9 +14,8 @@ var Project=require("./Page/Project/Project");
 var Company=require("./Page/Project/Company/Company");
 var Works=require("./Page/Project/Works/Works");
 var Member=require("./Page/Member/Member");
-var Join=require("./Page/JoinUs/JoinUs");
+var Join=require("./Page/JoinUS/JoinUS");
 var Wish=require("./Page/Wish/Wish");
-var Form=require("./Page/Form/Form");
 
 var App=React.createClass({
     render:function(){
@@ -36,7 +35,7 @@ var Root=React.createClass({
             <Router history={hashHistory}>
                 <Route path="/" component={App}>
                     <IndexRedirect to="/home" />
-                    <Route path="/home" component={Home} />
+                    <Route path="/home" component={Home} title="首页"/>
                     <Route path="/team" component={Team} />
                     <Route path="/department" component={Department} />
                     <Route path="/member" component={Member} />
@@ -47,7 +46,6 @@ var Root=React.createClass({
                     </Route>
                     <Route path="/join" component={Join} />
                     <Route path="/wish" component={Wish} />
-                    <Route path="/form" component={Form} />
                 </Route>
             </Router>
         )

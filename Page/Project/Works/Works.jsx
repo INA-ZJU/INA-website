@@ -5,6 +5,7 @@ var LeftEndCircle=require("./Circle/Circle").LeftEndCircle;
 var RightEndCircle=require("./Circle/Circle").RightEndCircle;
 var ActiveCircle=require("./Circle/Circle").ActiveCircle;
 var $=require("jquery");
+var Helmet=require("react-helmet");
 
 var Works=React.createClass({
     getInitialState:function(){
@@ -19,9 +20,9 @@ var Works=React.createClass({
     },
     componentWillMount:function(){
         $.ajax({
-            url:"/Backend/ina.php?target=project",
+            url:"http://114.215.144.43/ina.php?target=project",
             type:"GET",
-            dataType:"json",
+            dataType:"jsonp",
             success:function(res){
                 if(res.code==0){
                     this.setState({
@@ -105,6 +106,10 @@ var Works=React.createClass({
             var item=this.state.slideList[i];
             slides.push(
                 <div className="item" key={i}>
+                    <Helmet
+                        title="优秀项目"
+                        titleTemplate="%s | 浙江大学互联网协会(INA)"
+                    />
                     <div className={style.infoBox}>
                         <div className={style.img}>
                             <img src={item.picUrl} />

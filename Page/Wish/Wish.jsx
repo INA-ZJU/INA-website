@@ -1,6 +1,7 @@
 var React=require("react");
 var style=require("./Wish.css");
 var $=require("jquery");
+var Helmet=require("react-helmet");
 
 var Wish=React.createClass({
     getInitialState:function(){
@@ -43,6 +44,10 @@ var Wish=React.createClass({
 
         return (
             <div className={style.container} style={conStyle}>
+                <Helmet
+                    title="意向部门"
+                    titleTemplate="%s | 浙江大学互联网协会(INA)"
+                />
                 <table className={style.content}>
                     <caption className={style.title}>请选择你的志愿部门</caption>
                     <tbody>

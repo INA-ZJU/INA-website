@@ -2,6 +2,7 @@ var React=require("react");
 var $=require("jquery");
 var style=require("./Home.css");
 var Carousel=require("./Carousel/Carousel");
+var Helmet=require("react-helmet");
 
 var Home=React.createClass({
     getInitialState:function(){
@@ -27,6 +28,10 @@ var Home=React.createClass({
         };
         return(
             <div className={style.container} style={conStyle}>
+                <Helmet
+                    title="首页"
+                    titleTemplate="%s | 浙江大学互联网协会(INA)"
+                    />
                 <div className={style.shelter} style={conStyle}></div>
                 <Carousel midHeight={this.state.midHeight}/>
             </div>
