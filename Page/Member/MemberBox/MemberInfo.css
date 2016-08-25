@@ -2,6 +2,7 @@
   display: none;
 }
 .moreInfoOnHover{
+  margin-top: 30px;
   width: 91.6%;
   height: 70%;
   margin: 4.5% 4.2% 130px 4.2%;
@@ -65,9 +66,19 @@
   position: relative;
   margin: 0 2.1% auto 2.1%;
   float: left;
+/*  width: 24%;*/
 }
 .memberListBox{
   padding-top: 0;
   position: absolute;
   top: 100px;
+  /*margin-top: 200px;*/
+}
+
+.tansition{
+  transition: transform 2s;
+  transform:rotate(360deg);
+  -moz-transform:rotate(360deg);  
+  -webkit-transform:rotate(360deg); 
+  -o-transform:rotate(360deg); 
 }

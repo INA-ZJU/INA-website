@@ -11,7 +11,8 @@ var Member=React.createClass({
         return {
             midHeight:0,
             tagList:["主席团","战略/VC部","产品/运营部","技术部","设计部"],
-            currActive:0    //当前显示部门的key值
+            currActive:0,    //当前显示部门的key值，
+            memberList:[[]],
         }
     },
     autoChange:function(){
@@ -21,7 +22,33 @@ var Member=React.createClass({
             this.setState({
                 currActive:next
             })
-        }.bind(this),5000)
+        }.bind(this),10000)
+    },
+    componentWillMount:function(){
+        $.ajax({
+            url:"http://114.215.144.43/ina.php?target=member",
+            type:"GET",
+            dataType:"jsonp",
+            jsonp:"callback",
+            jsonpCallback:"success_jsonpCallback",
+            success:function(res){
+                if(res.code==0) {
+                    memberList=res.memberList;
+                    var currActiveMember=new Array();
+                    for (var i = 0; i < 5; i++) {
+                        currActiveMember[i]=new Array();
+                    }
+                    for (var i = memberList.length - 1; i >= 0; i--) {
+                        currActiveMember[memberList[i].department].push(memberList[i]);
+                    }
+                    this.setState({memberList:currActiveMember});
+                }
+                else alert("获取成员信息失败!");
+            }.bind(this),
+            error:function(err){
+                alert("请检查网络配置!");
+            }
+        });
     },
     componentDidMount:function(){
         var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
@@ -67,6 +94,7 @@ var Member=React.createClass({
                 <MemberBox
                     midHeight={this.state.midHeight}
                     currActive={this.state.currActive}
+                    memberList={this.state.memberList[this.state.currActive]}
                 />
             </div>
         )

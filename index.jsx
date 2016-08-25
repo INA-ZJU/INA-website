@@ -14,7 +14,7 @@ var Project=require("./Page/Project/Project");
 var Company=require("./Page/Project/Company/Company");
 var Works=require("./Page/Project/Works/Works");
 var Member=require("./Page/Member/Member");
-var Join=require("./Page/JoinUS/JoinUS");
+var Join=require("./Page/JoinUs/JoinUs");
 var Wish=require("./Page/Wish/Wish");
 var Form=require("./Page/Form/Form");
 
