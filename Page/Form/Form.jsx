@@ -139,10 +139,14 @@ var Form=React.createClass({
                     chosen[0] = value;
                 }
                 element.chosen = chosen;
-                this.setState({[target]:element});
+                var obj={};
+                obj[target]=element;
+                this.setState(obj);
                 break;
             case 3://text
-                this.setState({[target]:value});
+                var obj={};
+                obj[target]=value;
+                this.setState(obj);
                 break;
             case 4://others
                 var others = this.state.others;
@@ -190,7 +194,9 @@ var Form=React.createClass({
             case 5://array 比如reason
                 var array = this.state[target];
                 array[index] = value;
-                this.setState({[target]:array});
+                var obj={};
+                obj[target]=array;
+                this.setState(obj);
                 break;
         }
     },

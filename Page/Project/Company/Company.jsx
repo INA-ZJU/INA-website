@@ -55,10 +55,14 @@ var Company=React.createClass({
                     img:"/Page/Project/static/wacai-6-2.png",
                     name:"挖财"
                 },
-                //liebao:{
-                //    img:"/Page/Project/static/liebao-7.png",
-                //    name:"猎豹"
-                //}
+                liebao:{
+                   img:"/Page/Project/static/liebao-7.png",
+                   name:"猎豹"
+                },
+                likedIn:{
+                    img:"/Page/Project/static/linkedIn-7-2.png",
+                    name:"领英"
+                }
             }
         }
     },
