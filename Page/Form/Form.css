@@ -9,7 +9,7 @@
     background: url("/Page/Form/static/form.png");
     background-size: cover;
     width: 70%;
-    margin: auto 15%;
+    margin: 20px 15%;
     padding: 20px 20px;
 }
 
@@ -84,16 +84,16 @@
     margin-right: 10px;
 }
 
-.introduction{
+.introduction, .others{
     width: 100%;
 }
 
-.introduction>tbody>tr{
+.introduction>tbody>tr, .others>tbody>tr{
     height: 30px;
 }
 
-.label>small{
-    color: inherit;
+.introduction>tbody>tr>td>small{
+    color: transparent;
     font-size: 15px;
 }
 
@@ -101,7 +101,7 @@
     width: 12.5%;
 }
 
-.introduction>tbody>tr>td>.input{
+.introduction>tbody>tr>td>.input, .others>tbody>tr>td>.input{
     width: 100%;
 }
 
@@ -135,4 +135,28 @@
 
 .areaTr{
     vertical-align: top;
+}
+
+.areaTr>td>.label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    line-height: 2;
+}
+
+
+.others>tbody>.areaTr>td>.area{
+    margin-left: 30px;
+}
+
+.button{
+    background: url("/Page/Form/static/button.png");
+    background-size: contain;
+    width: 177px;
+    height: 60px;
+    margin: 20px auto;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    cursor: pointer;
 }

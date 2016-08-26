@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "INA website",
   "main": "webpack.config.js",
-  "dependencies": {},
+  "dependencies": {
+    "react-helmet": "^3.1.0"
+  },
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",

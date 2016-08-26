@@ -47,7 +47,7 @@ var Root=React.createClass({
                     </Route>
                     <Route path="/join" component={Join} />
                     <Route path="/wish" component={Wish} />
-                    <Route path="/form" component={Form} />
+                    <Route path="/form/:department" component={Form} />
                 </Route>
             </Router>
         )
