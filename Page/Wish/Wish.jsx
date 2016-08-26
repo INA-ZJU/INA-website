@@ -2,6 +2,7 @@ var React=require("react");
 var style=require("./Wish.css");
 var $=require("jquery");
 var Helmet=require("react-helmet");
+var Link=require("react-router").Link;
 
 var Wish=React.createClass({
     getInitialState:function(){
@@ -53,24 +54,24 @@ var Wish=React.createClass({
                     <tbody>
                         <tr>
                             <td style={(this.state.hover==1)?tdStyle:null} className={style.td}>
-                                <img src="/Page/Wish/static/choice-vc.png" className={style.choice}
-                                     onMouseMove={function(event){this.hover(1, event)}.bind(this)} onMouseOut={this.mouseOut}/>
+                                <Link to="/form/0"><img src="/Page/Wish/static/choice-vc.png" className={style.choice}
+                                     onMouseMove={function(event){this.hover(1, event)}.bind(this)} onMouseOut={this.mouseOut}/></Link>
                                 <big className={style.text}>战略/VC部</big>
                             </td>
                             <td style={(this.state.hover==2)?tdStyle:null} className={style.td}>
-                                <img src="/Page/Wish/static/choice-pmer.png" className={style.choice}
-                                     onMouseMove={function(event){this.hover(2, event)}.bind(this)} onMouseOut={this.mouseOut}/>
+                                <Link to="/form/1"><img src="/Page/Wish/static/choice-pmer.png" className={style.choice}
+                                     onMouseMove={function(event){this.hover(2, event)}.bind(this)} onMouseOut={this.mouseOut}/></Link>
                                 <big className={style.text}>产品运营部</big>
                             </td>
                             <td style={(this.state.hover==3)?tdStyle:null} className={style.td}>
-                                <img src="/Page/Wish/static/choice-tech.png" className={style.choice}
+                                <Link to="/form/2"><img src="/Page/Wish/static/choice-tech.png" className={style.choice}
                                      onMouseMove={function(event){this.hover(3, event)}.bind(this)} onMouseOut={this.mouseOut}/>
-                                <big className={style.text}>技术部</big>
+                                <big className={style.text}>技术部</big></Link>
                             </td>
                             <td style={(this.state.hover==4)?tdStyle:null} className={style.td}>
-                                <img src="/Page/Wish/static/choice-design.png" className={style.choice}
+                                <Link to="/form/3"><img src="/Page/Wish/static/choice-design.png" className={style.choice}
                                      onMouseMove={function(event){this.hover(4, event)}.bind(this)} onMouseOut={this.mouseOut}/>
-                                <big className={style.text}>设计部</big>
+                                <big className={style.text}>设计部</big></Link>
                             </td>
                         </tr>
                     </tbody>

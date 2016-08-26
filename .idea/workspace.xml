@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c975cf38-5dc0-4642-8a2e-55d7e4cf2653" name="Default" comment="志愿选择">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Page/Form/static/button.png" />
+    <list default="true" id="c975cf38-5dc0-4642-8a2e-55d7e4cf2653" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Page/Form/Form.css" afterPath="$PROJECT_DIR$/Page/Form/Form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Page/Form/Form.jsx" afterPath="$PROJECT_DIR$/Page/Form/Form.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Page/Wish/Wish.jsx" afterPath="$PROJECT_DIR$/Page/Wish/Wish.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.bundle.js" afterPath="$PROJECT_DIR$/index.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.jsx" afterPath="$PROJECT_DIR$/index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="INA-website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,17 +35,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Form.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Form.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Page/Form/Form.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74876034">
-              <caret line="416" column="3" selection-start-line="416" selection-start-column="3" selection-end-line="416" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="422" column="3" selection-start-line="422" selection-start-column="3" selection-end-line="422" selection-end-column="3" />
               <folding>
-                <element signature="e#7257#12548#0" expanded="false" />
-                <element signature="e#12569#16333#0" expanded="false" />
-                <element signature="e#16354#18392#0" expanded="false" />
-                <element signature="e#18413#21107#0" expanded="false" />
+                <element signature="e#7407#12698#0" expanded="false" />
+                <element signature="e#12719#16483#0" expanded="false" />
+                <element signature="e#16504#18542#0" expanded="false" />
+                <element signature="e#18563#21257#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.5">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,36 +80,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.bundle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.bundle.js">
+      <file leaf-file-name="Wish.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Page/Wish/Wish.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5277778">
+              <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Wish.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Page/Wish/Wish.jsx">
+      <file leaf-file-name="Footer.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Common/Footer/Footer.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-              <folding>
-                <marker date="1472181699604" expanded="true" signature="1360:3440" placeholder="&lt;xml/&gt;" />
-              </folding>
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JoinUs.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Page/JoinUs/JoinUs.jsx">
+      <file leaf-file-name="Header.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Common/Header/Header.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="0" selection-start-line="33" selection-start-column="17" selection-end-line="42" selection-end-column="22" />
-              <folding>
-                <marker date="1472181699541" expanded="true" signature="991:1221" placeholder="&lt;xml/&gt;" />
-              </folding>
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,16 +115,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-19.25">
               <caret line="160" column="19" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JoinUs.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Page/JoinUs/JoinUs.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -128,16 +130,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Wish.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Page/Wish/Wish.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="37" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -148,7 +140,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -158,10 +150,11 @@
         <option value="$PROJECT_DIR$/Page/JoinUs/JoinUs.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Page/Wish/Wish.css" />
-        <option value="$PROJECT_DIR$/Page/Wish/Wish.jsx" />
         <option value="$PROJECT_DIR$/index.jsx" />
         <option value="$PROJECT_DIR$/Page/Form/Form.css" />
         <option value="$PROJECT_DIR$/Page/Form/Form.jsx" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/Page/Wish/Wish.jsx" />
       </list>
     </option>
   </component>
@@ -222,6 +215,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="INA-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wish" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="INA-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="INA-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="INA-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Header" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -276,21 +333,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Common/Header/Header.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Department/Department.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Home/Carousel/Carousel.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Home/Home.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/JoinUs/JoinUs.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Member/.DS_Store</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Member/Member.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Member/MemberBox/.DS_Store</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Member/static/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Form/Form.jsx</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Project/Company/Company.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Project/Works/Works.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Team/Team.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Wish/Wish.jsx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.bundle.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.jsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/package.json</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -298,6 +343,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Page/Project/static/linkedIn-7-2.png</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -462,25 +508,31 @@
       <option name="project" value="LOCAL" />
       <updated>1472030804745</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="报名表页面完成 待完成文件上传及跨域提交">
+      <created>1472195306215</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1472195306215</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -504,7 +556,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="尺寸修改" />
     <MESSAGE value="志愿选择" />
-    <option name="LAST_COMMIT_MESSAGE" value="志愿选择" />
+    <MESSAGE value="报名表页面完成 待完成文件上传及跨域提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="报名表页面完成 待完成文件上传及跨域提交" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -513,17 +566,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Page/Member/MemberBox/MemberBox.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Page/Member/Member.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -603,6 +650,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -649,13 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -677,14 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,13 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Header/Header.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Common/Header/Header.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="10.607142">
@@ -786,6 +812,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -810,16 +837,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="76" column="37" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Page/Wish/Wish.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding>
-            <marker date="1472181699604" expanded="true" signature="1360:3440" placeholder="&lt;xml/&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -864,14 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Page/Form/Form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.25">
-          <caret line="160" column="19" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/project/welcome/views/containers/form.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -880,16 +889,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/Footer/Footer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Page/Form/Form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.25">
+          <caret line="160" column="19" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Page/Form/Form.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74876034">
-          <caret line="416" column="3" selection-start-line="416" selection-start-column="3" selection-end-line="416" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="422" column="3" selection-start-line="422" selection-start-column="3" selection-end-line="422" selection-end-column="3" />
           <folding>
-            <element signature="e#7257#12548#0" expanded="false" />
-            <element signature="e#12569#16333#0" expanded="false" />
-            <element signature="e#16354#18392#0" expanded="false" />
-            <element signature="e#18413#21107#0" expanded="false" />
+            <element signature="e#7407#12698#0" expanded="false" />
+            <element signature="e#12719#16483#0" expanded="false" />
+            <element signature="e#16504#18542#0" expanded="false" />
+            <element signature="e#18563#21257#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/Header/Header.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Page/Wish/Wish.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5277778">
+          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

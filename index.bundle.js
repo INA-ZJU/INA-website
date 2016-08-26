@@ -39724,6 +39724,14 @@
 	                wacai: {
 	                    img: "/Page/Project/static/wacai-6-2.png",
 	                    name: "挖财"
+	                },
+	                liebao: {
+	                    img: "/Page/Project/static/liebao-7.png",
+	                    name: "猎豹"
+	                },
+	                likedIn: {
+	                    img: "/Page/Project/static/linkedIn-7-2.png",
+	                    name: "领英"
 	                }
 	            }
 	        };
@@ -40762,6 +40770,7 @@
 	var style = __webpack_require__(296);
 	var $ = __webpack_require__(244);
 	var Helmet = __webpack_require__(250);
+	var Link = __webpack_require__(172).Link;
 
 	var Wish = React.createClass({
 	    displayName: "Wish",
@@ -40828,10 +40837,14 @@
 	                        React.createElement(
 	                            "td",
 	                            { style: this.state.hover == 1 ? tdStyle : null, className: style.td },
-	                            React.createElement("img", { src: "/Page/Wish/static/choice-vc.png", className: style.choice,
-	                                onMouseMove: function (event) {
-	                                    this.hover(1, event);
-	                                }.bind(this), onMouseOut: this.mouseOut }),
+	                            React.createElement(
+	                                Link,
+	                                { to: "/form/0" },
+	                                React.createElement("img", { src: "/Page/Wish/static/choice-vc.png", className: style.choice,
+	                                    onMouseMove: function (event) {
+	                                        this.hover(1, event);
+	                                    }.bind(this), onMouseOut: this.mouseOut })
+	                            ),
 	                            React.createElement(
 	                                "big",
 	                                { className: style.text },
@@ -40841,10 +40854,14 @@
 	                        React.createElement(
 	                            "td",
 	                            { style: this.state.hover == 2 ? tdStyle : null, className: style.td },
-	                            React.createElement("img", { src: "/Page/Wish/static/choice-pmer.png", className: style.choice,
-	                                onMouseMove: function (event) {
-	                                    this.hover(2, event);
-	                                }.bind(this), onMouseOut: this.mouseOut }),
+	                            React.createElement(
+	                                Link,
+	                                { to: "/form/1" },
+	                                React.createElement("img", { src: "/Page/Wish/static/choice-pmer.png", className: style.choice,
+	                                    onMouseMove: function (event) {
+	                                        this.hover(2, event);
+	                                    }.bind(this), onMouseOut: this.mouseOut })
+	                            ),
 	                            React.createElement(
 	                                "big",
 	                                { className: style.text },
@@ -40854,27 +40871,35 @@
 	                        React.createElement(
 	                            "td",
 	                            { style: this.state.hover == 3 ? tdStyle : null, className: style.td },
-	                            React.createElement("img", { src: "/Page/Wish/static/choice-tech.png", className: style.choice,
-	                                onMouseMove: function (event) {
-	                                    this.hover(3, event);
-	                                }.bind(this), onMouseOut: this.mouseOut }),
 	                            React.createElement(
-	                                "big",
-	                                { className: style.text },
-	                                "技术部"
+	                                Link,
+	                                { to: "/form/2" },
+	                                React.createElement("img", { src: "/Page/Wish/static/choice-tech.png", className: style.choice,
+	                                    onMouseMove: function (event) {
+	                                        this.hover(3, event);
+	                                    }.bind(this), onMouseOut: this.mouseOut }),
+	                                React.createElement(
+	                                    "big",
+	                                    { className: style.text },
+	                                    "技术部"
+	                                )
 	                            )
 	                        ),
 	                        React.createElement(
 	                            "td",
 	                            { style: this.state.hover == 4 ? tdStyle : null, className: style.td },
-	                            React.createElement("img", { src: "/Page/Wish/static/choice-design.png", className: style.choice,
-	                                onMouseMove: function (event) {
-	                                    this.hover(4, event);
-	                                }.bind(this), onMouseOut: this.mouseOut }),
 	                            React.createElement(
-	                                "big",
-	                                { className: style.text },
-	                                "设计部"
+	                                Link,
+	                                { to: "/form/3" },
+	                                React.createElement("img", { src: "/Page/Wish/static/choice-design.png", className: style.choice,
+	                                    onMouseMove: function (event) {
+	                                        this.hover(4, event);
+	                                    }.bind(this), onMouseOut: this.mouseOut }),
+	                                React.createElement(
+	                                    "big",
+	                                    { className: style.text },
+	                                    "设计部"
+	                                )
 	                            )
 	                        )
 	                    )
@@ -40953,7 +40978,7 @@
 	        var chosen = choice[index];
 	        return {
 	            midHeight: 0,
-	            eventID: '',
+	            eventID: '14',
 	            writetime: '',
 	            browserinfo: '',
 	            baseinfo: {
@@ -41019,6 +41044,39 @@
 	            });
 	        }.bind(this));
 	    },
+	    submit: function () {
+	        $.ajax({
+	            url: "form/submit",
+	            contentType: 'application/jsonp',
+	            type: 'POST',
+	            data: JSON.stringify({
+	                eventID: this.state.eventID,
+	                writetime: this.state.writetime,
+	                browserinfo: this.state.browserinfo,
+	                baseinfo: this.state.baseinfo,
+	                skills: this.state.skills,
+	                introduction: this.state.introduction,
+	                wish: this.state.wish,
+	                reason: this.state.reason,
+	                others: this.state.others,
+	                remark: this.state.remark
+	            }),
+	            success: function (data) {
+	                console.log(data);
+	                switch (data.code) {
+	                    case 0:
+	                        window.location.href = '/#/person/info';
+	                        break;
+	                    default:
+	                        console.log(data.msg);
+	                        break;
+	                }
+	            }.bind(this),
+	            error: function (xhr, status, err) {
+	                console.error("ajax请求发起失败");
+	            }.bind(this)
+	        });
+	    },
 	    dataPass: function (value, target, type, index, checkState) {
 	        //index  可选参数 在others类组件中才会用到 表示others数组中的元素下标
 	        //checkState 可选参数 在others类中的多选 单选 组件才会用到 表示该组件是否选中
@@ -41045,11 +41103,15 @@
 	                        chosen[0] = value;
 	                    }
 	                element.chosen = chosen;
-	                this.setState({ [target]: element });
+	                var obj = {};
+	                obj[target] = element;
+	                this.setState(obj);
 	                break;
 	            case 3:
 	                //text
-	                this.setState({ [target]: value });
+	                var obj = {};
+	                obj[target] = value;
+	                this.setState(obj);
 	                break;
 	            case 4:
 	                //others
@@ -41097,7 +41159,9 @@
 	                //array 比如reason
 	                var array = this.state[target];
 	                array[index] = value;
-	                this.setState({ [target]: array });
+	                var obj = {};
+	                obj[target] = array;
+	                this.setState(obj);
 	                break;
 	        }
 	    },
@@ -41629,7 +41693,7 @@
 	                ),
 	                React.createElement(
 	                    "div",
-	                    { className: style.button },
+	                    { className: style.button, onClick: null },
 	                    "提交"
 	                )
 	            )
@@ -41674,7 +41738,7 @@
 
 
 	// module
-	exports.push([module.id, "._3RDaBBS267yUZxBRIp_nP7{\r\n    background: url(\"/Page/Form/static/background.png\") center;\r\n    background-size:cover;\r\n    position: relative;\r\n    overflow: auto;\r\n}\r\n\r\n._1ep5-2I0KizxZErtB6I0oc{\r\n    background: url(\"/Page/Form/static/form.png\");\r\n    background-size: cover;\r\n    width: 70%;\r\n    margin: 20px 15%;\r\n    padding: 20px 20px;\r\n}\r\n\r\n._3ivmK-LKUrkLRTlNG1s1QY{\r\n    color: #000;\r\n    font-size: 32px;\r\n    font-weight: bold;\r\n    text-shadow: -5px -5px 10px #7f7f7f;\r\n    text-align: center;\r\n    margin: 30px auto 50px auto;\r\n}\r\n\r\n._3XgyjD7iweXMtC_g9YzHMf{\r\n    width:80%;\r\n    margin:20px 10%;\r\n}\r\n\r\n.zc6wqYDTuejSxL387LvcJ{\r\n    margin-left: -20px;\r\n    text-align: left;\r\n}\r\n\r\n.XJA7BDSTbKeG2nrXC0Fpv{\r\n    width: 40px;\r\n    height: 40px;\r\n    vertical-align: middle;\r\n}\r\n\r\n._2OPaStye1ibak9izgZUXfL{\r\n    font-size: 20px;\r\n    font-weight: bold;\r\n    color: #f5cd37;\r\n    text-shadow: -2px -2px 5px #000;\r\n    vertical-align: middle;\r\n    margin: auto 10px;\r\n}\r\n\r\n._1ivNODibDHMdsQuXkiN1mU{\r\n    width: 50%;\r\n}\r\n\r\n._1ivNODibDHMdsQuXkiN1mU>tbody>tr{\r\n    height: 30px;\r\n}\r\n\r\n.tfVyZhbk7R-XeSYx_u5-8{\r\n    width:25%;\r\n}\r\n\r\n.tfVyZhbk7R-XeSYx_u5-8>small{\r\n    color: #FF0000;\r\n    font-size: 15px;\r\n}\r\n\r\n._1hLfsqoamHwPNx5ZFKxxZs{\r\n    background-color: inherit;\r\n    border: 1px solid #7f7f7f;\r\n    border-radius: 2px;\r\n    width: 80%;\r\n    height: 25px;\r\n    padding: 1px 5px;\r\n    box-sizing:border-box;\r\n    -moz-box-sizing:border-box; /* Firefox */\r\n    -webkit-box-sizing:border-box; /* Safari */\r\n}\r\n\r\n._1FCdxf7Q5UWJvKmo8ByX2M{\r\n    width:80%;\r\n}\r\n\r\n._2E1A6ofn0VVxpcsTyIsvtN{\r\n    margin-right: 10px;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN, ._2Cq-vgYnFgfyIShTiymFud{\r\n    width: 100%;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr, ._2Cq-vgYnFgfyIShTiymFud>tbody>tr{\r\n    height: 30px;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr>td>small{\r\n    color: transparent;\r\n    font-size: 15px;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr>.tfVyZhbk7R-XeSYx_u5-8{\r\n    width: 12.5%;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr>td>._1hLfsqoamHwPNx5ZFKxxZs, ._2Cq-vgYnFgfyIShTiymFud>tbody>tr>td>._1hLfsqoamHwPNx5ZFKxxZs{\r\n    width: 100%;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr{\r\n    min-height: 30px;\r\n}\r\n\r\n._39H0sEvBsA-70wKBLmyvYJ{\r\n    width: 100%;\r\n}\r\n\r\n._39H0sEvBsA-70wKBLmyvYJ>tbody>tr>td{\r\n    width: 20%;\r\n}\r\n\r\n._39H0sEvBsA-70wKBLmyvYJ>tbody>tr>td>._1hLfsqoamHwPNx5ZFKxxZs{\r\n    width: 100%;\r\n}\r\n\r\n._3RrEJV9ZuMaKvzpAqlB7Gk{\r\n    background-color: inherit;\r\n    border: 1px solid #7f7f7f;\r\n    border-radius: 2px;\r\n    width: 100%;\r\n    padding: 1px 5px;\r\n    height: 200px;\r\n    box-sizing:border-box;\r\n    -moz-box-sizing:border-box; /* Firefox */\r\n    -webkit-box-sizing:border-box; /* Safari */\r\n}\r\n\r\n.Rv_8ax_9lNlVHcW_HiXdi{\r\n    vertical-align: top;\r\n}\r\n\r\n.Rv_8ax_9lNlVHcW_HiXdi>td>.tfVyZhbk7R-XeSYx_u5-8{\r\n    margin-top: 20px;\r\n    margin-bottom: 10px;\r\n    width: 100%;\r\n    line-height: 2;\r\n}\r\n\r\n\r\n._2Cq-vgYnFgfyIShTiymFud>tbody>.Rv_8ax_9lNlVHcW_HiXdi>td>._3RrEJV9ZuMaKvzpAqlB7Gk{\r\n    margin-left: 30px;\r\n}\r\n\r\n._1eprVtgMxX_WvS61-vhEv5{\r\n    background: url(\"/Page/Form/static/button.png\");\r\n    background-size: contain;\r\n    width: 100px;\r\n    margin: 20px auto;\r\n}", ""]);
+	exports.push([module.id, "._3RDaBBS267yUZxBRIp_nP7{\r\n    background: url(\"/Page/Form/static/background.png\") center;\r\n    background-size:cover;\r\n    position: relative;\r\n    overflow: auto;\r\n}\r\n\r\n._1ep5-2I0KizxZErtB6I0oc{\r\n    background: url(\"/Page/Form/static/form.png\");\r\n    background-size: cover;\r\n    width: 70%;\r\n    margin: 20px 15%;\r\n    padding: 20px 20px;\r\n}\r\n\r\n._3ivmK-LKUrkLRTlNG1s1QY{\r\n    color: #000;\r\n    font-size: 32px;\r\n    font-weight: bold;\r\n    text-shadow: -5px -5px 10px #7f7f7f;\r\n    text-align: center;\r\n    margin: 30px auto 50px auto;\r\n}\r\n\r\n._3XgyjD7iweXMtC_g9YzHMf{\r\n    width:80%;\r\n    margin:20px 10%;\r\n}\r\n\r\n.zc6wqYDTuejSxL387LvcJ{\r\n    margin-left: -20px;\r\n    text-align: left;\r\n}\r\n\r\n.XJA7BDSTbKeG2nrXC0Fpv{\r\n    width: 40px;\r\n    height: 40px;\r\n    vertical-align: middle;\r\n}\r\n\r\n._2OPaStye1ibak9izgZUXfL{\r\n    font-size: 20px;\r\n    font-weight: bold;\r\n    color: #f5cd37;\r\n    text-shadow: -2px -2px 5px #000;\r\n    vertical-align: middle;\r\n    margin: auto 10px;\r\n}\r\n\r\n._1ivNODibDHMdsQuXkiN1mU{\r\n    width: 50%;\r\n}\r\n\r\n._1ivNODibDHMdsQuXkiN1mU>tbody>tr{\r\n    height: 30px;\r\n}\r\n\r\n.tfVyZhbk7R-XeSYx_u5-8{\r\n    width:25%;\r\n}\r\n\r\n.tfVyZhbk7R-XeSYx_u5-8>small{\r\n    color: #FF0000;\r\n    font-size: 15px;\r\n}\r\n\r\n._1hLfsqoamHwPNx5ZFKxxZs{\r\n    background-color: inherit;\r\n    border: 1px solid #7f7f7f;\r\n    border-radius: 2px;\r\n    width: 80%;\r\n    height: 25px;\r\n    padding: 1px 5px;\r\n    box-sizing:border-box;\r\n    -moz-box-sizing:border-box; /* Firefox */\r\n    -webkit-box-sizing:border-box; /* Safari */\r\n}\r\n\r\n._1FCdxf7Q5UWJvKmo8ByX2M{\r\n    width:80%;\r\n}\r\n\r\n._2E1A6ofn0VVxpcsTyIsvtN{\r\n    margin-right: 10px;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN, ._2Cq-vgYnFgfyIShTiymFud{\r\n    width: 100%;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr, ._2Cq-vgYnFgfyIShTiymFud>tbody>tr{\r\n    height: 30px;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr>td>small{\r\n    color: transparent;\r\n    font-size: 15px;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr>.tfVyZhbk7R-XeSYx_u5-8{\r\n    width: 12.5%;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr>td>._1hLfsqoamHwPNx5ZFKxxZs, ._2Cq-vgYnFgfyIShTiymFud>tbody>tr>td>._1hLfsqoamHwPNx5ZFKxxZs{\r\n    width: 100%;\r\n}\r\n\r\n._3B9563HyLh9CNGfjID1ofN>tbody>tr{\r\n    min-height: 30px;\r\n}\r\n\r\n._39H0sEvBsA-70wKBLmyvYJ{\r\n    width: 100%;\r\n}\r\n\r\n._39H0sEvBsA-70wKBLmyvYJ>tbody>tr>td{\r\n    width: 20%;\r\n}\r\n\r\n._39H0sEvBsA-70wKBLmyvYJ>tbody>tr>td>._1hLfsqoamHwPNx5ZFKxxZs{\r\n    width: 100%;\r\n}\r\n\r\n._3RrEJV9ZuMaKvzpAqlB7Gk{\r\n    background-color: inherit;\r\n    border: 1px solid #7f7f7f;\r\n    border-radius: 2px;\r\n    width: 100%;\r\n    padding: 1px 5px;\r\n    height: 200px;\r\n    box-sizing:border-box;\r\n    -moz-box-sizing:border-box; /* Firefox */\r\n    -webkit-box-sizing:border-box; /* Safari */\r\n}\r\n\r\n.Rv_8ax_9lNlVHcW_HiXdi{\r\n    vertical-align: top;\r\n}\r\n\r\n.Rv_8ax_9lNlVHcW_HiXdi>td>.tfVyZhbk7R-XeSYx_u5-8{\r\n    margin-top: 20px;\r\n    margin-bottom: 10px;\r\n    width: 100%;\r\n    line-height: 2;\r\n}\r\n\r\n\r\n._2Cq-vgYnFgfyIShTiymFud>tbody>.Rv_8ax_9lNlVHcW_HiXdi>td>._3RrEJV9ZuMaKvzpAqlB7Gk{\r\n    margin-left: 30px;\r\n}\r\n\r\n._1eprVtgMxX_WvS61-vhEv5{\r\n    background: url(\"/Page/Form/static/button.png\");\r\n    background-size: contain;\r\n    width: 177px;\r\n    height: 60px;\r\n    margin: 20px auto;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n    line-height: 60px;\r\n    cursor: pointer;\r\n}", ""]);
 
 	// exports
 	exports.locals = {
