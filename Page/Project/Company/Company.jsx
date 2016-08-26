@@ -112,7 +112,7 @@ var Company=React.createClass({
                 case 3:order="four";break;
                 case 4:order="five";break;
                 case 5:order="six";break;
-                case 6:order="sevent";break;
+                case 6:order="seven";break;
             }
             if(i%2)
                 rotateBlocks.push(
