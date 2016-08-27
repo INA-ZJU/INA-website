@@ -44,11 +44,12 @@ var Works=React.createClass({
             var curr=this.state.currActive;
             var next=(curr+1)>=this.state.slideList.length?0:curr+1;
             this.changePro(next);
-        }.bind(this),5000);
+        }.bind(this),8000);
     },
     changePro:function(target){
         if(this.state.isSlide) return;
         var oldPos=this.state.currActive;
+        if(target==oldPos) return;
         this.setState({
             currActive:target,
             isSlide:1

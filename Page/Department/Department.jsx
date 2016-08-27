@@ -22,7 +22,7 @@ var Department=React.createClass({
             this.setState({
                 currActive:next
             })
-        }.bind(this),5000)
+        }.bind(this),8000)
     },
     componentDidMount:function(){
         var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
