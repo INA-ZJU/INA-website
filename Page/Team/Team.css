@@ -1,6 +1,6 @@
 .container{
     width:100%;
-    background:url("/Page/Team/static/teamBackground.png") center;
+    background:url("/Page/Team/static/teamBackground.jpg") center;
     background-size: cover;
     overflow: hidden;
     position: relative;
