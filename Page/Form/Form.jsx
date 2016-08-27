@@ -1,6 +1,7 @@
 var React=require("react");
 var style=require("./Form.css");
 var $=require("jquery");
+var Helmet=require("react-helmet");
 
 var Form=React.createClass({
     getInitialState:function(){
@@ -217,8 +218,12 @@ var Form=React.createClass({
 
         return (
             <div className={style.container} style={conStyle}>
+                <Helmet
+                    title={this.state.wish.chosen}
+                    titleTemplate="报名表 | %s"
+                />
                 <div className={style.frame}>
-                    <div className={style.head}>INA秋季纳新报名表</div>
+                    <div className={style.head}>INA秋季纳新报名表--{this.state.wish.chosen}</div>
                     <div className={style.content}>
                         <div className={style.title}>
                             <img className={style.titleImg} src="/Page/Form/static/baseinfo.png" alt="基本信息"/>
