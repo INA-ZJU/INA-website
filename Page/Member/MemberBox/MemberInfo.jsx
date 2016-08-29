@@ -30,14 +30,14 @@ var MemberInfo = React.createClass({
         this.setState({opacity: 0});
       }
       //以下是切换Tag的动画效果
-      if (this.state.currActive!=this.props.currActive){
-        this.setState({currActive: this.props.currActive,flag:true});
-        $('.'+style.memberInfoBox).removeClass(style.tansition);
-      }
-      else{
-        // if(this.state.opacity< 1)this.setState({opacity: this.state.opacity+0.01,flag:false});
-        $('.'+style.memberInfoBox).addClass(style.tansition);
-      }
+      // if (this.state.currActive!=this.props.currActive){
+      //   this.setState({currActive: this.props.currActive,flag:true});
+      //   $('.'+style.memberInfoBox).removeClass(style.tansition);
+      // }
+      // else{
+      //   // if(this.state.opacity< 1)this.setState({opacity: this.state.opacity+0.01,flag:false});
+      //   $('.'+style.memberInfoBox).addClass(style.tansition);
+      // }
     }.bind(this), 25);
   },
 
