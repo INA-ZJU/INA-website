@@ -57,7 +57,7 @@ var Animation = React.createClass({
           $('.bkgScrollBox').scrollTop(scrollLength);
         }.bind(this),1);
     },
-    render() {
+    render:function(){
       var windowWidth=document.body.clientWidth;
       var windowHeight=document.body.clientHeight;
       // console.log(windowWidth+' '+windowHeight)

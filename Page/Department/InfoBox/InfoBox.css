@@ -32,7 +32,6 @@
     margin: 20% auto;
     font-size:16px;
     z-index: 10;
-    overflow-y:scroll;
     letter-spacing:1px;
 }
 @media screen and (min-width:1400px) and (max-width:1600px){

@@ -5,8 +5,9 @@
     height: 100%;
   }
   .bkgBox{
-    position:absolute;
-    overflow:hidden;
+      position:absolute;
+      overflow:hidden;
+      background-color:white;
   }
   .bkgImg{
     display: block;
@@ -17,6 +18,14 @@
   .gressBar{
     position: absolute;
   }
+  @keyframes twinkling {
+      0%{
+          opacity:0; /*透明度为0*/
+      }
+      100%{
+          opacity:1; /*透明度为1*/
+      }
+  }
   @-webkit-keyframes twinkling{    /*透明度由0到1*/
     0%{
        opacity:0; /*透明度为0*/
@@ -24,6 +33,14 @@
     100%{
        opacity:1; /*透明度为1*/
     }
+  }
+  @-moz-keyframes twinkling {
+      0%{
+          opacity:0; /*透明度为0*/
+      }
+      100%{
+          opacity:1; /*透明度为1*/
+      }
   }
   .gressTip{
     color:red;

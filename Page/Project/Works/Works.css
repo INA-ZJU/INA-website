@@ -47,6 +47,23 @@
     overflow-y: scroll;
     font-size:14px;
 }
+@media screen and (min-width:1400px) and (max-width:1600px){
+    .infoBox>.intro>.dsec>.title{
+        font-size:20px;
+    }
+    .infoBox>.intro>.dsec>.text{
+        font-size:16px;
+    }
+}
+@media screen and (min-width:1600px){
+    .infoBox>.intro>.dsec>.title{
+        font-size:24px;
+    }
+    .infoBox>.intro>.dsec>.text{
+        font-size:20px;
+    }
+}
+
 .infoBox>.intro>.shelter{
     position: absolute;
     width:32%;

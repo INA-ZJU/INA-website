@@ -18,7 +18,7 @@ var Works=React.createClass({
     contextTypes:{
         midHeight:React.PropTypes.number
     },
-    componentWillMount:function(){
+    componentDidMount:function(){
         $.ajax({
             url:"http://114.215.144.43/ina.php?target=project",
             type:"GET",

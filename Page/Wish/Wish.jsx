@@ -27,11 +27,11 @@ var Wish=React.createClass({
         var target = event.target;
         this.setState({hover:targetNum});
 
-        $('#cover').fadeIn(500);
+        $('#cover').fadeIn(300);
     },
     mouseOut: function(){
         this.setState({hover:0});
-        $('#cover').fadeOut(500);
+        $('#cover').fadeOut(300);
     },
     render:function(){
         var conStyle={

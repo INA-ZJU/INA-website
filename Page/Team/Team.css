@@ -21,7 +21,6 @@
     margin-top: 3%;
     color:white;
     position: absolute;
-    overflow-y: scroll;
     z-index:11;
     letter-spacing: 1px;
 }

@@ -36,23 +36,23 @@ var Company=React.createClass({
                     name:"网易"
                 },
                 chuxin:{
-                    img:"/Page/Project/static/chuxin-4-2.png",
+                    img:"/Page/Project/static/chuxin-4-2.jpg",
                     name:"初心资本"
                 },
                 sina:{
-                    img:"/Page/Project/static/sina-5.png",
+                    img:"/Page/Project/static/sina-5.jpg",
                     name:"新浪"
                 },
                 yunqi:{
-                    img:"/Page/Project/static/yunqi-5-2.png",
+                    img:"/Page/Project/static/yunqi-5-2.jpg",
                     name:"云启创投"
                 },
                 tencent:{
-                    img:"/Page/Project/static/tencent-6.png",
+                    img:"/Page/Project/static/tencent-6.jpg",
                     name:"腾讯"
                 },
                 wacai:{
-                    img:"/Page/Project/static/wacai-6-2.png",
+                    img:"/Page/Project/static/wacai-6-2.jpg",
                     name:"挖财"
                 },
                 liebao:{

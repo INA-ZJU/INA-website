@@ -1,6 +1,6 @@
 .container{
     width:100%;
-    background: url("/Page/Home/static/homeBackground.png") center;
+    background: url("/Page/Home/static/homeBackground.jpg") center;
     background-size:cover;
 }
 .shelter{
