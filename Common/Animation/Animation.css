@@ -1,0 +1,35 @@
+  .boxDiv{
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+  }
+  .bkgBox{
+    position:absolute;
+    overflow:hidden;
+  }
+  .bkgImg{
+    display: block;
+  }
+  .fixedImg{
+    position: absolute;
+  }
+  .gressBar{
+    position: absolute;
+  }
+  @-webkit-keyframes twinkling{    /*透明度由0到1*/
+    0%{
+       opacity:0; /*透明度为0*/
+     }
+    100%{
+       opacity:1; /*透明度为1*/
+    }
+  }
+  .gressTip{
+    color:red;
+    text-align: center;
+    -webkit-animation:twinkling 1s infinite ease-in-out;
+    -moz-animation:twinkling 1s infinite ease-in-out;
+    -o-animation:twinkling 1s infinite ease-in-out;
+    animation:twinkling 1s infinite ease-in-out;
+  }
