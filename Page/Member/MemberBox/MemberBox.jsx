@@ -10,7 +10,7 @@ var MemberBox = React.createClass({
     if (document.body.clientWidth*0.33<=height) {
       height=document.body.clientWidth*0.33;
     }
-    var left=(document.body.clientWidth-height*1.83)/2;
+    var left=(document.body.clientWidth-height*2.035)/2;
     var boxStyle={
         height:0.65*this.props.midHeight,
         width:document.body.clientWidth-left,

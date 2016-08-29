@@ -63,7 +63,7 @@ var MemberInfo = React.createClass({
       height:height,
       width:width,
       marginLeft:0,
-      marginRight:height*0.0966,
+      marginRight:height*0.2,
     }
     var imgStyle={
       height:height*0.75
