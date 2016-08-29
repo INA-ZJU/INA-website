@@ -38,10 +38,10 @@ var Animation = React.createClass({
             if (this.state.load==10) {
               $('.gressTip').html("资料读取完毕，准备好侵入INA了吗！").css('color','green');
               setTimeout(function(){
+                clearInterval(this.timer2);
                 $('.AnimationBox').fadeOut(2000);
               }.bind(this),2000)
               clearInterval(this.timer);
-              clearInterval(this.timer2);
             }
           }.bind(this),300);
         }.bind(this);
