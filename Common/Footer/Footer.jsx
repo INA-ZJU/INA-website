@@ -35,7 +35,7 @@ var Footer=React.createClass({
                     <li>浙江大学互联网协会 Internet Association Of Zhejiang University</li>
                     <li>联系我们：ZJUINA@163.com</li>
                     <li>微信公众平台：<a id="wechatLink" className="wechat" href="http://open.weixin.qq.com/qr/code/?username=ZJU_INA"
-                     rel="/Common/Footer/static/wechat_img.jpg">ZJU_INA</a></li>
+                     rel="/Common/Footer/static/wechat_img.png">ZJU_INA</a></li>
                 </ul>
                 <div className="cl"></div>
                 <div className={style.copyright}>Copyright©2016 ZJUINA.All rights reserved.</div>
