@@ -6,17 +6,23 @@ var $=require("jquery");
 var Animation = React.createClass({
     getInitialState:function() {
         return {
-            load:0
+            load:0,
+            flag:false
         };
+    },
+    bkgReady:function(){
+      this.setState({flag:true});
     },
     gressBarGo:function () {
       var counter=0;
       this.timer = setInterval(function () {
-        if (this.state.load == 3 && counter < 5) {
-          counter=counter+1;
-        }
-        else{
-          this.setState({load:this.state.load+1});
+        if (this.state.flag) {
+          if (this.state.load == 3 && counter < 5) {
+            counter=counter+1;
+          }
+          else{
+            this.setState({load:this.state.load+1});
+          }
         }
         if (this.state.load==9) {
           clearInterval(this.timer);
@@ -43,7 +49,7 @@ var Animation = React.createClass({
               }.bind(this),2000)
               clearInterval(this.timer);
             }
-          }.bind(this),300);
+          }.bind(this),400);
         }.bind(this);
         //背景图滚动
         var scrollLength=$('.bkgScroll').height()-document.body.clientWidth;
@@ -100,7 +106,7 @@ var Animation = React.createClass({
       return (
           <div className={style.boxDiv+" AnimationBox"}>
             <div style={bkgBoxStyle} className={style.bkgBox+" bkgScrollBox"}>
-              <img src="/Common/Animation/static/bkg.jpg" style={bkgStyle} className={style.bkgImg+" bkgScroll"}/>
+              <img src="/Common/Animation/static/bkg.jpg" style={bkgStyle} className={style.bkgImg+" bkgScroll"} onLoad={this.bkgReady}/>
             </div>
             <div className={style.gressBox}>
               <img src="/Common/Animation/static/fixed.png" style={fixedStyle} 
