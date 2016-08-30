@@ -3,7 +3,6 @@ var Header=require("./../../Common/Header/Header");
 var Footer=require("./../../Common/Footer/Footer");
 var style=require("./Project.css");
 var $=require("jquery");
-var Tags=require("./Tags/Tags");
 var Company=require("./Company/Company");
 var Works=require("./Works/Works");
 
@@ -25,7 +24,7 @@ var Project=React.createClass({
         var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
         this.setState({
             midHeight:midHeight-135
-        })
+        });
         $(window).resize(function(){
             var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
             this.setState({
@@ -40,7 +39,6 @@ var Project=React.createClass({
         return(
             <div>
                 <div className={style.container} style={conStyle}>
-                    <Tags />
                     {this.props.children}
                 </div>
             </div>

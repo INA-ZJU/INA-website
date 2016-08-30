@@ -10,7 +10,6 @@ var Tag=React.createClass({
                 <div
                     className={style.tag}
                     style={this.props.font}
-                    onClick={this.props.changeTag}
                 >
                     {this.props.children}
                     <div className={style.block} style={this.props.block}></div>
@@ -24,20 +23,13 @@ var Tag=React.createClass({
 
 var Tags=React.createClass({
     getInitialState:function(){
-        var url= location.hash;
-        var pagename=url.split(/\/|\?/)[1];
         return {
-            currActive:pagename=="company"?0:1,
+            currActive:this.props.pagename=="company"?0:1,
             tags:['成员去向','优秀项目']
         }
     },
     contextTypes:{
         midHeight:React.PropTypes.number
-    },
-    changeTag:function(target){
-        this.setState({
-            currActive:target
-        })
     },
     render:function(){
         var tags=this.state.tags.map(function(item,i){
@@ -50,13 +42,12 @@ var Tags=React.createClass({
                     backgroundColor:i==this.state.currActive?"#f5cd37":"transparent"
                 }
             };
-            var to=i?"/works":"company";
+            var to=i?"/project/works":"/project/company";
             return (
                 <Tag
                     key={i}
                     font={tagStyle.font}
                     block={tagStyle.block}
-                    changeTag={this.changeTag.bind(this,i)}
                     to={to}
                 >
                     {item}

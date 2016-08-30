@@ -1,7 +1,8 @@
 var React=require("react");
 var style=require("./Company.css");
 var RotateBlock=require("./RotateBlock");
-var Helmet=require("react-helmet")
+var Helmet=require("react-helmet");
+var Tags=require("./../Tags/Tags");
 
 var Company=React.createClass({
     getInitialState:function(){
@@ -126,14 +127,17 @@ var Company=React.createClass({
             i++;
         };
         return(
-            <div className={style.wall} style={wallStyle}>
-                <Helmet
-                    title="成员去向"
-                    titleTemplate="%s | 浙江大学互联网协会(INA)"
-                />
-                <img src="/Page/Project/static/companyWall.png" />
-                <div className={style.logoBox}>
-                    {rotateBlocks}
+            <div>
+                <Tags pagename="company" />
+                <div className={style.wall} style={wallStyle}>
+                    <Helmet
+                        title="成员去向"
+                        titleTemplate="%s | 浙江大学互联网协会(INA)"
+                    />
+                    <img src="/Page/Project/static/companyWall.png" />
+                    <div className={style.logoBox}>
+                        {rotateBlocks}
+                    </div>
                 </div>
             </div>
         )

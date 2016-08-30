@@ -6,13 +6,15 @@ var RightEndCircle=require("./Circle/Circle").RightEndCircle;
 var ActiveCircle=require("./Circle/Circle").ActiveCircle;
 var $=require("jquery");
 var Helmet=require("react-helmet");
+var Tags=require("./../Tags/Tags");
 
 var Works=React.createClass({
     getInitialState:function(){
         return {
             slideList:[],
             currActive:0,
-            isSlide:0   //检测是否正在轮播
+            isSlide:0,   //检测是否正在轮播
+            interval:null
         }
     },
     contextTypes:{
@@ -27,7 +29,7 @@ var Works=React.createClass({
                 if(res.code==0){
                     this.setState({
                         slideList:res.proList
-                    })
+                    });
                     $(".works .item").eq(0).addClass("active");
                     this.autoChange();
                 }
@@ -39,12 +41,19 @@ var Works=React.createClass({
             }
         })
     },
+    componentWillUnmount:function(){
+        clearInterval(this.state.interval);
+        $(".works .item").removeProp("class").addClass("item");
+    },
     autoChange:function(){
-        setInterval(function(){
+        var interval=setInterval(function(){
             var curr=this.state.currActive;
             var next=(curr+1)>=this.state.slideList.length?0:curr+1;
             this.changePro(next);
         }.bind(this),8000);
+        this.setState({
+            interval:interval
+        })
     },
     changePro:function(target){
         if(this.state.isSlide) return;
@@ -132,12 +141,15 @@ var Works=React.createClass({
             )
         }
         return(
-            <div className={style.works+" works"} style={workStyle}>
-                <div className={style.slideBox} style={slideStyle}>
-                    {slides}
-                </div>
-                <div className={style.control} style={controlStyle}>
-                    {circles}
+            <div>
+                <Tags pagename="works" />
+                <div className={style.works+" works"} style={workStyle}>
+                    <div className={style.slideBox} style={slideStyle}>
+                        {slides}
+                    </div>
+                    <div className={style.control} style={controlStyle}>
+                        {circles}
+                    </div>
                 </div>
             </div>
         )

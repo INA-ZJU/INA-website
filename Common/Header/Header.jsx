@@ -34,18 +34,18 @@ var Header=React.createClass({
             currPage:"/home"
         }  
     },
-    updateCurrPate:function(){
+    updateCurrPage:function(){
         var page="/"+location.hash.split(/\/|\?/)[1];
         if(page!=this.state.currPage)
             this.setState({
-                currPage:page
+                currPage: page
             })
     },
     componentDidMount:function(){
-        this.updateCurrPate();
+        this.updateCurrPage();
         window.onhashchange=function(){
-            this.updateCurrPate();
-        }.bind(this)
+            this.updateCurrPage();
+        }.bind(this);
     },
     render:function(){
         var active={
@@ -59,7 +59,7 @@ var Header=React.createClass({
             else return (
                 <Link key={key} to={item.url}><li>{item.text}</li></Link>
             )
-        }.bind(this))
+        }.bind(this));
         return (
             <div className={style.header}>
                 <div className={style.logoBox+" fl"}>
