@@ -1,6 +1,5 @@
 var React=require("react");
 var style=require("./Animation.css");
-var Link=require("react-router").Link;
 var $=require("jquery");
 
 var Animation = React.createClass({

@@ -1,20 +1,21 @@
 .header{
     width:100%;
     height:75px;
-    min-width:1000px;
+    min-width:1100px;
     background: url("/Common/Header/static/header.png") center;
     background-size:cover;
 }
 .logoBox{
-    margin-left: 8%;
+    margin-left: 5%;
     height:55px;
 }
 .logoBox>img{
-    width:100px;
-    margin-top: 12px;
+    width:320px;
+    height:auto;
+    margin-top: 9px;
 }
 .linkBox{
-    margin-right: 8%;
+    margin-right: 5%;
     height:75px;
 }
 .linkBox>ul{
@@ -24,7 +25,7 @@
     text-align: center;
     display: block;
     float:left;
-    width:100px;
+    width:95px;
     height:40px;
     line-height:40px;
     margin-right: 10px;

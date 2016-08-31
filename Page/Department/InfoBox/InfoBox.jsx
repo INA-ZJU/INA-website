@@ -23,7 +23,7 @@ var InfoBox=React.createClass({
                 },
                 {
                     img:"/Page/Department/static/tech.jpg",
-                    intro:"INA技术部希望与最GEEK的你一起研究最新各个技术领域的深度前景与创业前景。" +
+                    intro:"INA技术部希望与最GEEK的你一起研究各个技术领域的深度前景与创业前景。" +
                     "我们希望你是技术怪咖，和我们一起快乐的玩耍。" +
                     "INA技术部有本科期间无数次担任创业公司iOS主程的全栈，也有醉心于越狱插件的完全自给自足的GNU/ers，" +
                     "更有浙大AAA安全领域的大牛一起带你飞美帝blackhat。" +

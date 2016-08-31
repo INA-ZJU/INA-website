@@ -6,7 +6,7 @@ var Carousel=React.createClass({
     getInitialState:function(){
         return {
             itemList:[],
-            currActive:1,
+            currActive:0,
             currInfo:"INA纳新",
             isSlide:0,   //防止高频率点击圆点
             isClick:0   //防止高频率点击箭头
@@ -23,9 +23,9 @@ var Carousel=React.createClass({
                         itemList:res.picList
                     })
                     var item=$(".carousel .item");
-                    item.eq(0).addClass("slideLeft");
-                    item.eq(1).addClass("slideActive");
-                    item.eq(2).addClass("slideRight");
+                    item.eq(item.length-1).addClass("slideLeft");
+                    item.eq(0).addClass("slideActive");
+                    item.eq(1).addClass("slideRight");
                 }
                 else alert("获取图片失败!");
             }.bind(this),
@@ -35,7 +35,6 @@ var Carousel=React.createClass({
         });
     },
     circleActive:function(target){
-        console.log(this.state.isSlide)
         if(this.state.isSlide) return;
         var curr=this.state.currActive;
         var diff=(target-curr)>=0?(target-curr):(curr-target);
@@ -87,7 +86,8 @@ var Carousel=React.createClass({
             next=(curr+1)>=item.length?0:curr+1,
             newPic=(curr+2)>=item.length?curr+2-item.length:curr+2;
         this.setState({
-            currActive:next
+            currActive:next,
+            currInfo:this.state.itemList[next].picName
         });
         item.removeClass("left");
         item.eq(curr).addClass("left");
@@ -103,7 +103,7 @@ var Carousel=React.createClass({
         setTimeout(function(){
             item.eq(prev).removeClass("slideLeft left");
             this.setState({
-                isClick:0
+                isClick:0,
             })
         }.bind(this),260)
     },
@@ -121,7 +121,8 @@ var Carousel=React.createClass({
             prev=(curr+1)>=item.length?0:curr+1,
             newPic=(curr-2)<0?item.length+curr-2:curr-2;
         this.setState({
-            currActive:next
+            currActive:next,
+            currInfo:this.state.itemList[next].picName
         });
         item.removeClass("right");
         item.eq(curr).addClass("right");
@@ -137,7 +138,7 @@ var Carousel=React.createClass({
         setTimeout(function(){
             item.eq(prev).removeClass("slideRight right");
             this.setState({
-                isClick:0
+                isClick:0,
             })
         }.bind(this),260)
     },
@@ -172,7 +173,9 @@ var Carousel=React.createClass({
             );
             items.push(
                 <div className="item" style={styles.item} key={i}>
-                    <img src={this.state.itemList[i].picUrl} />
+                    <a href={this.state.itemList[i].redirectUrl}>
+                        <img src={this.state.itemList[i].picUrl} />
+                    </a>
                 </div>
             )
         }
