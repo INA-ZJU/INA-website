@@ -128,6 +128,7 @@
     width: 100%;
     padding: 1px 5px;
     height: 200px;
+    resize:none;
     box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Safari */

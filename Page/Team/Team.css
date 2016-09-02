@@ -18,6 +18,7 @@
 }
 .infoBox>.info{
     padding:10px 15px;
+    line-height:25px;
     margin-top: 3%;
     color:white;
     position: absolute;
@@ -27,11 +28,13 @@
 @media screen and (min-width:1400px) and (max-width:1600px){
     .infoBox>.info{
         font-size:18px;
+        line-height:35px;
     }
 }
 @media screen and (min-width:1600px){
     .infoBox>.info{
         font-size:22px;
+        line-height:45px;
     }
 }
 .infoBox>.shelter{

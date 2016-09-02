@@ -61,7 +61,7 @@ var Wish=React.createClass({
                             <td style={(this.state.hover==2)?tdStyle:null} className={style.td}>
                                 <Link to="/form/1"><img src="/Page/Wish/static/choice-pmer.png" className={style.choice}
                                      onMouseMove={function(event){this.hover(2, event)}.bind(this)} onMouseOut={this.mouseOut}/></Link>
-                                <big className={style.text}>产品运营部</big>
+                                <big className={style.text}>产品/运营部</big>
                             </td>
                             <td style={(this.state.hover==3)?tdStyle:null} className={style.td}>
                                 <Link to="/form/2"><img src="/Page/Wish/static/choice-tech.png" className={style.choice}
