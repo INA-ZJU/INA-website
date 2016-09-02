@@ -26,7 +26,7 @@ var Animation = React.createClass({
         if (this.state.load==9) {
           clearInterval(this.timer);
         }
-      }.bind(this),500);
+      }.bind(this),200);
     },
     componentDidMount:function() {
         //页面加载完成后执行
