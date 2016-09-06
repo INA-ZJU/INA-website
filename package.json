@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "INA website",
   "main": "webpack.config.js",
-  "dependencies": {},
+  "dependencies": {
+    "file-loader": "^0.9.0",
+    "fs": "0.0.1-security"
+  },
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",

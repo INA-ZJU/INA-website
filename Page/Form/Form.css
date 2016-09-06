@@ -49,10 +49,42 @@
 
 .baseinfo{
     width: 50%;
+    float: left;
 }
 
 .baseinfo>tbody>tr{
     height: 30px;
+}
+
+
+.photoUp{
+    display: inline-block;
+    width:50%;
+    height: 210px;/* 7*30 px*/
+}
+.img{
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    margin: 10px auto;
+}
+.img>img{
+    max-width: 100%;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+}
+.aUp{
+    text-align: center;
+    color: #0074D9;
+}
+.aUp:hover{
+    cursor: pointer;
+    color: #000088;
+}
+.text{
+    text-align: center;
+    color: #7f7f7f;
 }
 
 .label{
@@ -84,7 +116,7 @@
     margin-right: 10px;
 }
 
-.introduction, .others{
+.introduction, .others, .files{
     width: 100%;
 }
 
@@ -148,6 +180,21 @@
 
 .others>tbody>.areaTr>td>.area{
     margin-left: 30px;
+}
+
+.filename{
+    display: inline-block;
+}
+
+.fileButton{
+    display: inline-block;
+    margin: auto 10px;
+    color: blue;
+}
+
+.fileButton:hover{
+    cursor: pointer;
+    color: #000088;
 }
 
 .button{
