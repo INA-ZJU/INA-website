@@ -10,7 +10,7 @@ var Form=React.createClass({
         var chosen = choice[index];
         return {
             midHeight:0,
-            eventID: '14',
+            eventID: '38',
             writetime: '',
             browserinfo: '',
             baseinfo:{
@@ -26,7 +26,9 @@ var Form=React.createClass({
                 qq:'',
                 major:'',
                 birth:'',
-                address:''
+                address:'',
+                img:'',
+                grade:''
             },
             skills: {
                 delete:false,
@@ -83,8 +85,9 @@ var Form=React.createClass({
     },
     submit: function(){
         $.ajax({
-            url: "form/submit",
-            contentType: 'application/jsonp',
+            url: "http://182.254.157.172:3000/form/submit",
+            //url: "http://localhost:3000/form/submit",
+            contentType: 'application/json',
             type: 'POST',
             data: JSON.stringify({
                 eventID: this.state.eventID,
@@ -283,6 +286,13 @@ var Form=React.createClass({
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td className={style.label}><small>*</small> 年级　</td>
+                                    <td>
+                                        <input type="text" className={style.input}  defaultValue={this.state.baseinfo.grade}
+                                               onBlur={function(event){this.dataPass(event.target.value, 'grade', 1)}.bind(this)}/>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td className={style.label}><small>*</small> 手机号</td>
                                     <td>
                                         <input type="text" className={style.input}  defaultValue={this.state.baseinfo.telnumber}
@@ -420,7 +430,7 @@ var Form=React.createClass({
                             </tbody>
                         </table>
                     </div>
-                    <div className={style.button} onClick={null}>提交</div>
+                    <div className={style.button} onClick={this.submit}>提交</div>
                 </div>
             </div>
         )
