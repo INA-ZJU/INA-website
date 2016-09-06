@@ -125,7 +125,9 @@ var Form=React.createClass({
                     var domain = up.getOption('domain');
                     var res = $.parseJSON(info);
                     var sourceLink = domain + res.key;
-                    this.setState({'img':sourceLink});
+                    var baseinfo = this.state.baseinfo;
+                    baseinfo.img = sourceLink;
+                    this.setState({baseinfo:baseinfo});
 
                     //上传提示消失 相关事件解绑
                     $('#loading').fadeOut();
