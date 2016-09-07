@@ -10,7 +10,7 @@ var Form=React.createClass({
         var chosen = choice[index];
         return {
             midHeight:0,
-            eventID: '38',
+            eventID: '12',
             writetime: '',
             browserinfo: '',
             baseinfo:{
@@ -236,18 +236,18 @@ var Form=React.createClass({
                 remark: this.state.remark
             }),
             success: function(data) {
-                console.log(data);
                 switch(data.code){
                     case 0:
-                        window.location.href = '/#/person/info';
+                        alert("报名表提交成功!");
+                        window.location.href = '/#/wish';
                         break;
                     default:
-                        console.log(data.msg);
+                        alert(data.msg);
                         break;
                 }
             }.bind(this),
             error: function(xhr, status, err) {
-                console.error("ajax请求发起失败");
+                alert("请检查网络配置!");
             }.bind(this)
         });
     },
