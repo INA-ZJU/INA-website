@@ -10,7 +10,7 @@ var Form=React.createClass({
         var chosen = choice[index];
         return {
             midHeight:0,
-            eventID: '12',
+            eventID: 19,
             writetime: '',
             browserinfo: '',
             baseinfo:{
@@ -513,7 +513,7 @@ var Form=React.createClass({
                                 <td className={style.label}><small>*</small> 个人经历</td>
                                 <td>
                                     <textarea className={style.area}  defaultValue={this.state.baseinfo.schoolID}
-                                           onBlur={function(event){this.dataPass(event.target.value, 'introduction', 3)}.bind(this)}/>
+                                           onBlur={function(event){this.dataPass({delete:false,title:'个人经历',content:event.target.value}, 'introduction', 3)}.bind(this)}/>
                                 </td>
                             </tr>
                             </tbody>
