@@ -36,8 +36,8 @@ var Form=React.createClass({
                 chosen:['']
             },
             introduction: {
-                delete:'',
-                title: '',
+                delete:false,
+                title: '个人简历',
                 content: ''
             },
             wish: {
