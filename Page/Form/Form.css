@@ -196,17 +196,27 @@
     cursor: pointer;
     color: #000088;
 }
-
-.button{
-    background: url("/Page/Form/static/button.png");
-    background-size: contain;
-    width: 177px;
-    height: 60px;
-    margin: 20px auto;
+.btnBox{
     text-align: center;
-    vertical-align: middle;
-    line-height: 60px;
+}
+.btnBox>button{
+    display: inline-block;
+    border:0;
+    border-radius:5px;
+    font-size:16px;
+    width: 120px;
+    height: 40px;
+    margin: 20px;
+    text-align: center;
+    line-height: 40px;
     cursor: pointer;
+}
+.btnBox>.submitBtn{
+    background-color:#f4cc3c;
+}
+.btnBox>.saveBtn{
+    background-color: #999999;
+    color:white;
 }
 
 :global(#loading){

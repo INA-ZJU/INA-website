@@ -8,7 +8,8 @@ var Form=React.createClass({
         var choice = ['战略/VC部', '产品运营部', '技术部', '设计部'];
         var index = this.props.params.department;
         var chosen = choice[index];
-        return {
+        var cache=JSON.parse(localStorage.getItem("formCache"));
+        return cache || {
             midHeight:0,
             eventID: 19,
             writetime: '',
@@ -97,7 +98,7 @@ var Form=React.createClass({
         var uploader = Qiniu.uploader({
             runtimes: 'html5,flash,html4',
             browse_button: 'photo',
-            uptoken_url: 'http://182.254.157.172:3000/uptoken',
+            uptoken_url: 'http://182.254.157.172/uptoken',
             domain: 'http://ocsdd1fl7.bkt.clouddn.com/',   //bucket 域名，下载资源时用到，**必需**
             get_new_uptoken: false,  //设置上传文件的时候是否每次都重新获取新的token
             max_file_size: '10mb',           //最大文件体积限制
@@ -159,7 +160,7 @@ var Form=React.createClass({
                     index: i,
                     runtimes: 'html5,flash,html4',
                     browse_button: 'file'+i,
-                    uptoken_url: 'http://182.254.157.172:3000/uptoken',
+                    uptoken_url: 'http://182.254.157.172/uptoken',
                     domain: 'http://ocsdd1fl7.bkt.clouddn.com/',   //bucket 域名，下载资源时用到，**必需**
                     get_new_uptoken: false,  //设置上传文件的时候是否每次都重新获取新的token
                     max_file_size: '100mb',           //最大文件体积限制
@@ -217,9 +218,14 @@ var Form=React.createClass({
             }
         }
     },
+    saveForm:function(){
+        var cache=JSON.stringify(this.state);
+        localStorage.setItem("formCache",cache);
+        alert('已成功保存!');
+    },
     submit: function(){
         $.ajax({
-            url: "http://182.254.157.172:3000/form/submit",
+            url: "http://182.254.157.172/form/submit",
             //url: "http://localhost:3000/form/submit",
             contentType: 'application/json',
             type: 'POST',
@@ -616,7 +622,10 @@ var Form=React.createClass({
                             </tbody>
                         </table>
                     </div>
-                    <div className={style.button} onClick={this.submit}>提交</div>
+                    <div className={style.btnBox}>
+                        <button className={style.saveBtn} onClick={this.saveForm}>保存</button>
+                        <button className={style.submitBtn} onClick={this.submit}>提交</button>
+                    </div>
                 </div>
             </div>
         )
