@@ -5,7 +5,6 @@ var Router=routeObj.Router;
 var Route=routeObj.Route;
 var hashHistory=routeObj.hashHistory;
 var IndexRedirect=routeObj.IndexRedirect;
-var Animation = require("./Common/Animation/Animation");
 var Header=require("./Common/Header/Header");
 var Footer=require("./Common/Footer/Footer");
 var Home=require("./Page/Home/Home");
@@ -23,7 +22,6 @@ var App=React.createClass({
     render:function(){
         return(
             <div>
-                <Animation />
                 <Header />
                     {this.props.children}
                 <Footer />
