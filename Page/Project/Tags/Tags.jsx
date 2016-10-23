@@ -42,7 +42,7 @@ var Tags=React.createClass({
                     backgroundColor:i==this.state.currActive?"#f5cd37":"transparent"
                 }
             };
-            var to=i?"/project/works":"/project/company";
+            var to=i?"/works":"/company";
             return (
                 <Tag
                     key={i}
