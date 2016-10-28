@@ -1,6 +1,5 @@
 var React=require("react");
 var style=require("./Carousel.css");
-var $=require("jquery");
 
 var Carousel=React.createClass({
     getInitialState:function(){

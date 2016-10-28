@@ -1,5 +1,4 @@
 var React=require("react");
-var $=require("jquery");
 var Header=require("./../../Common/Header/Header");
 var Footer=require("./../../Common/Footer/Footer");
 var style=require("./Team.css");

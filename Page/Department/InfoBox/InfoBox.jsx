@@ -1,6 +1,5 @@
 var React=require("react");
 var style=require("./InfoBox.css");
-var $=require("jquery");
 var Info=require("./Info");
 
 var InfoBox=React.createClass({

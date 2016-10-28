@@ -1,10 +1,5 @@
 var React=require("react");
-var Header=require("./../../Common/Header/Header");
-var Footer=require("./../../Common/Footer/Footer");
 var style=require("./Project.css");
-var $=require("jquery");
-var Company=require("./Company/Company");
-var Works=require("./Works/Works");
 
 var Project=React.createClass({
     getInitialState:function(){

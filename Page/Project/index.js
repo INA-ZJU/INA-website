@@ -1,0 +1,17 @@
+module.exports={
+    path:'project',
+    indexRoute:require("./Company"),
+    getChildRoutes:function(partialNextState,cb){
+        require.ensure([],function(require){
+            cb(null,[
+                require("./Company"),
+                require("./Works")
+            ])
+        })
+    },
+    getComponent:function(nextState,cb){
+        require.ensure([],function(require){
+            cb(null,require("./Project"))
+        })
+    }
+}

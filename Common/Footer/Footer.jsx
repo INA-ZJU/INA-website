@@ -1,6 +1,5 @@
 var React=require("react");
 var style=require("./Footer.css");
-var $=require("jquery");
 
 var Footer=React.createClass({
     componentDidMount:function() {

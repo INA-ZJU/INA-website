@@ -4,7 +4,6 @@ var Circle=require("./Circle/Circle").Circle;
 var LeftEndCircle=require("./Circle/Circle").LeftEndCircle;
 var RightEndCircle=require("./Circle/Circle").RightEndCircle;
 var ActiveCircle=require("./Circle/Circle").ActiveCircle;
-var $=require("jquery");
 var Helmet=require("react-helmet");
 var Tags=require("./../Tags/Tags");
 

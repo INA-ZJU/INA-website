@@ -1,6 +1,5 @@
 var React=require("react");
 var style=require("./Form.css");
-var $=require("jquery");
 var Helmet=require("react-helmet");
 
 var Form=React.createClass({

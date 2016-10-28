@@ -1,6 +1,5 @@
 var React=require("react");
 var style=require("./Wish.css");
-var $=require("jquery");
 var Helmet=require("react-helmet");
 var Link=require("react-router").Link;
 

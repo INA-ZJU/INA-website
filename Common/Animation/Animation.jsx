@@ -1,6 +1,5 @@
 var React=require("react");
 var style=require("./Animation.css");
-var $=require("jquery");
 
 var Animation = React.createClass({
     getInitialState:function() {

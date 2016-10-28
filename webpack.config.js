@@ -4,7 +4,10 @@ module.exports={
         index:'./index.jsx'
     },
     output:{
-        filename:'[name].bundle.js'
+        path:'./build',
+        publicPath:'./build/',
+        filename:'[name].bundle.js',
+        chunkFilename:'[id].[chunkhash:5].chunk.js'
     },
     module:{
         loaders:[

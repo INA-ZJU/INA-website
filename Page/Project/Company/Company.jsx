@@ -1,6 +1,6 @@
 var React=require("react");
 var style=require("./Company.css");
-var RotateBlock=require("./RotateBlock");
+var RotateBlock=require("./RotateBlock/RotateBlock");
 var Helmet=require("react-helmet");
 var Tags=require("./../Tags/Tags");
 

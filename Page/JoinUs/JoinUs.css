@@ -5,7 +5,7 @@
 }
 
 .frame{
-    background: url("/Page/JoinUs/static/frame.png");
+    background: url("/Page/JoinUs/static/frame.png") -5px 0;
     background-size: contain;
     width: 295px;
     height: 400px;
@@ -17,10 +17,26 @@
 .button{
     position: absolute;
     top: 290px;
-    right: 5px;
+    right: 10px;
     width: 170px;
     height: 56px;
 }
+
+@media screen and (min-width:1600px){
+    .frame{
+        top:70px;
+        background-size:120%;
+        background-position: -80px -40px;
+        width:400px;
+        height:545px;
+    }
+    .button{
+        top:430px;
+        width:200px;
+        height:60px;
+    }
+}
+
 
 .button:hover{
     cursor: pointer;

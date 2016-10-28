@@ -1,5 +1,4 @@
 var React=require("react");
-var $=require("jquery");
 var style=require("./Home.css");
 var Carousel=require("./Carousel/Carousel");
 var Helmet=require("react-helmet");

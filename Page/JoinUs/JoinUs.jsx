@@ -1,6 +1,5 @@
 var React=require("react");
 var style=require("./JoinUs.css");
-var $=require("jquery");
 var Helmet=require("react-helmet");
 
 var JoinUs=React.createClass({
