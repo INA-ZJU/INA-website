@@ -45,7 +45,7 @@ var Form=React.createClass({
                 title:'选择部门',
                 chosen:[chosen]
             },
-            reason: [''],
+            reason: '',
             others:[
                 {
                     type:'single-text',
@@ -271,7 +271,8 @@ var Form=React.createClass({
                 var chosen = element.chosen;
                 if(checkState == 1)//checked
                 {
-                    chosen.push(value);
+                    if(chosen.indexOf(value)<0)
+                        chosen.push(value);
                 }
                 else if(checkState == 0)//unchecked
                 {
@@ -305,7 +306,10 @@ var Form=React.createClass({
                         var chosen = element.chosen;
                         if(checkState == 1)//checked
                         {
-                            chosen.push(value);
+                            if(chosen.indexOf(value)<0)
+                            {
+                                chosen.push(value);
+                            }
                         }
                         else if(checkState == 0)//unchecked
                         {
@@ -491,23 +495,23 @@ var Form=React.createClass({
                                 <td>
                                     <table className={style.skills}><tbody><tr>
                                         <td>
-                                            <input type="checkbox" name="skills" className={style.checkbox}
-                                                   onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('PS', 'skills', 2, null, checked)}.bind(this)}/>PS
+                                            <input type="checkbox" name="skills" className={style.checkbox} {...((this.state.skills.chosen.indexOf("PS")>-1)?{checked:"checked"}:{})}
+                                                    onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('PS', 'skills', 2, null, checked)}.bind(this)}/>PS
                                         </td>
                                         <td>
-                                            <input type="checkbox" name="skills" className={style.checkbox}
+                                            <input type="checkbox" name="skills" className={style.checkbox} {...((this.state.skills.chosen.indexOf("摄影")>-1)?{checked:"checked"}:{})}
                                                    onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('摄影', 'skills', 2, null, checked)}.bind(this)}/>摄影
                                         </td>
                                         <td>
-                                            <input type="checkbox" name="skills" className={style.checkbox}
+                                            <input type="checkbox" name="skills" className={style.checkbox} {...((this.state.skills.chosen.indexOf("代码")>-1)?{checked:"checked"}:{})}
                                                    onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('代码', 'skills', 2, null, checked)}.bind(this)}/>代码
                                         </td>
                                         <td>
-                                            <input type="checkbox" name="skills" className={style.checkbox}
+                                            <input type="checkbox" name="skills" className={style.checkbox} {...((this.state.skills.chosen.indexOf("视频")>-1)?{checked:"checked"}:{})}
                                                    onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('视频', 'skills', 2, null, checked)}.bind(this)}/>视频
                                         </td>
                                         <td>
-                                            <input type="text" name="skills" className={style.input} placeholder="其他 留空则无"
+                                            <input type="text" name="skills" className={style.input} placeholder="其他 留空则无" defaultValue={this.state.skills.chosen[0]}
                                                    onBlur={function(event){(event.target.value)?this.dataPass(event.target.value, 'skills', 2 , null, -1):null}.bind(this)}/>
                                         </td>
 
@@ -517,7 +521,7 @@ var Form=React.createClass({
                             <tr className={style.areaTr}>
                                 <td className={style.label}><small>*</small> 个人经历</td>
                                 <td>
-                                    <textarea className={style.area}  defaultValue={this.state.baseinfo.schoolID}
+                                    <textarea className={style.area}  defaultValue={this.state.introduction.content}
                                            onBlur={function(event){this.dataPass({delete:false,title:'个人经历',content:event.target.value}, 'introduction', 3)}.bind(this)}/>
                                 </td>
                             </tr>
@@ -534,21 +538,21 @@ var Form=React.createClass({
                                 <tr className={style.areaTr}>
                                     <td>
                                         <div className={style.label}>1.你认为自己最与众不同的特征是什么？请举一个例子。</div>
-                                        <textarea className={style.area}
+                                        <textarea className={style.area} defaultValue={this.state.others[1].content}
                                                   onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 1, null)}.bind(this)}/>
                                     </td>
                                 </tr>
                                 <tr className={style.areaTr}>
                                     <td>
                                         <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
-                                        <textarea className={style.area}
+                                        <textarea className={style.area} defaultValue={this.state.reason}
                                                   onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
                                     </td>
                                 </tr>
                                 <tr className={style.areaTr}>
                                     <td>
                                         <div className={style.label}>3.请简单描述你最常用或者最喜欢的一个App，说说它最吸引你的地方在哪里，有什么不足。如果你是该产品的产品经理，会如何改进?</div>
-                                        <textarea className={style.area}
+                                        <textarea className={style.area} defaultValue={this.state.others[2].content}
                                                   onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
                                     </td>
                                 </tr>
@@ -564,29 +568,29 @@ var Form=React.createClass({
                             <tbody>
                             <tr>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周六上午")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六上午', null, 4, 3, checked)}.bind(this)}/>周六上午
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周六下午")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六下午', null, 4, 3, checked)}.bind(this)}/>周六下午
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周六晚上")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六晚上', null, 4, 3, checked)}.bind(this)}/>周六晚上
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周日上午")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日上午', null, 4, 3, checked)}.bind(this)}/>周日上午
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周日下午")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日下午', null, 4, 3, checked)}.bind(this)}/>周日下午
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周日晚上")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日晚上', null, 4, 3, checked)}.bind(this)}/>周日晚上
                                 </td>
                             </tr>
