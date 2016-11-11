@@ -26,14 +26,14 @@ var Member=React.createClass({
     },
     componentWillMount:function(){
         $.ajax({
-            url:"http://114.215.144.43/ina.php?target=member",
+            url:"http://114.215.144.43/Backend/ina.php?target=member",
             type:"GET",
             dataType:"jsonp",
             jsonp:"callback",
-            jsonpCallback:"success_jsonpCallback",
+            jsonpCallback:"successCallback",
             success:function(res){
                 if(res.code==0) {
-                    memberList=res.memberList;
+                    var memberList=res.memberList;
                     var currActiveMember=new Array();
                     for (var i = 0; i < 5; i++) {
                         currActiveMember[i]=new Array();

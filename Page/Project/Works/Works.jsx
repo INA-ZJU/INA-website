@@ -21,9 +21,11 @@ var Works=React.createClass({
     },
     componentDidMount:function(){
         $.ajax({
-            url:"http://114.215.144.43/ina.php?target=project",
+            url:"http://114.215.144.43/Backend/ina.php?target=project",
             type:"GET",
             dataType:"jsonp",
+            jsonp:'callback',
+            jsonpCallback:"successCallback",
             success:function(res){
                 if(res.code==0){
                     this.setState({
