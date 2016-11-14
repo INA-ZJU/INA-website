@@ -27,3 +27,21 @@
     color:#f5cd37;
     border-color: #f5cd37;
 }
+.pointers img{
+    width:100%;
+}
+.pointers>div{
+    position:absolute;
+    z-index:10;
+    cursor:pointer;
+}
+.pointers>.ltPrt{
+    left:10%;
+    top:40%;
+    width:5%;
+}
+.pointers>.rtPrt{
+    top:40%;
+    width:5%;
+    right:10%;
+}
