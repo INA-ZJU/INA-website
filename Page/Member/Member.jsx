@@ -27,7 +27,10 @@ var Member=React.createClass({
                 isClick:1
             })
         }
-        if (this.state.count[this.state.currActive]+3>=this.state.allList[this.state.currActive].length) return;
+        if (this.state.count[this.state.currActive]+3>=this.state.allList[this.state.currActive].length){
+            this.setState({isClick:0});
+            return;
+        }
         
         var count=this.state.count;
         count[this.state.currActive]+=3;
@@ -48,7 +51,11 @@ var Member=React.createClass({
                 isClick:1
             })
         }
-        if (this.state.count[this.state.currActive]==0) return;
+        if (this.state.count[this.state.currActive]==0){
+            this.setState({isClick:0});
+            return;
+        } 
+        
         var count=this.state.count;
         count[this.state.currActive]-=3;
         var i=count[this.state.currActive];
