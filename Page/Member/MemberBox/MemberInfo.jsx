@@ -58,6 +58,8 @@ var MemberInfo = React.createClass({
     }
     var infoBoxStyle={
       height:height*0.25,
+      padding:5,
+      paddingTop:10
     };
     var boxStyle={
       height:height,

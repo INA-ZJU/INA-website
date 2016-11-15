@@ -2,7 +2,7 @@
     position: absolute;
     bottom:0;
     width:100%;
-    min-width:1000px;
+    min-width:1080px;
     height:60px;
     background: url("/Common/Footer/static/footer.png") center;
     background-size:cover;
