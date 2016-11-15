@@ -7,64 +7,120 @@ var Tags=require("./../Tags/Tags");
 var Company=React.createClass({
     getInitialState:function(){
         return {
-            company:{
-                youdao:{
+            company:[
+                {
                     img:"/Page/Project/static/youdao-1.png",
                     name:"有道"
                 },
-                MS:{
+                {
                     img:"/Page/Project/static/MS-1-2.png",
                     name:"摩根士丹利"
                 },
-                qunar:{
+                {
+                    img:"/Page/Project/static/1.png",
+                    name:"360"
+                },
+                {
+                    img:"/Page/Project/static/11.png",
+                    name:"保洁"
+                },
+                {
                     img:"/Page/Project/static/qunar-2.png",
                     name:"去哪儿"
                 },
-                chuangxingc:{
+                {
                     img:"/Page/Project/static/chuangxingc-2-2.png",
                     name:"创新工场"
                 },
-                alibaba:{
+                {
+                    img:"/Page/Project/static/2.png",
+                    name:"触宝"
+                },
+                {
+                    img:"/Page/Project/static/22.png",
+                    name:"大疆"
+                },
+                {
                     img:"/Page/Project/static/alibaba-3.png",
                     name:"阿里巴巴"
                 },
-                goldman:{
+                {
                     img:"/Page/Project/static/goldman-3-2.png",
                     name:"高盛"
                 },
-                netease:{
+                {
+                    img:"/Page/Project/static/33.png",
+                    name:"华为"
+                },
+                {
+                    img:"/Page/Project/static/3.png",
+                    name:"滴滴出行"
+                },
+                {
                     img:"/Page/Project/static/netease-4.png",
                     name:"网易"
                 },
-                chuxin:{
+                {
                     img:"/Page/Project/static/chuxin-4-2.jpg",
                     name:"初心资本"
                 },
-                sina:{
+                {
+                    img:"/Page/Project/static/4.png",
+                    name:"金山"
+                },
+                {
+                    img:"/Page/Project/static/44.png",
+                    name:"京东"
+                },
+                {
                     img:"/Page/Project/static/sina-5.jpg",
                     name:"新浪"
                 },
-                yunqi:{
+                {
                     img:"/Page/Project/static/yunqi-5-2.jpg",
                     name:"云启创投"
                 },
-                tencent:{
+                {
+                   img:"/Page/Project/static/5.png",
+                   name:"蘑菇街"
+                },
+                {
+                    img:"/Page/Project/static/55.png",
+                    name:"麒麟会"
+                },
+                {
                     img:"/Page/Project/static/tencent-6.jpg",
                     name:"腾讯"
                 },
-                wacai:{
+                {
                     img:"/Page/Project/static/wacai-6-2.jpg",
                     name:"挖财"
                 },
-                liebao:{
+                {
+                    img:"/Page/Project/static/66.png",
+                    name:"百度"
+                },
+                {
+                    img:"/Page/Project/static/6.png",
+                    name:"微策略"
+                },
+                {
                    img:"/Page/Project/static/liebao-7.png",
                    name:"猎豹"
                 },
-                likedIn:{
+                {
                     img:"/Page/Project/static/linkedIn-7-2.png",
                     name:"领英"
+                },
+                {
+                    img:"/Page/Project/static/77.png",
+                    name:"大众点评"
+                },
+                {
+                    img:"/Page/Project/static/7.png",
+                    name:"搜狐"
                 }
-            }
+            ]
         }
     },
     contextTypes:{
@@ -103,10 +159,9 @@ var Company=React.createClass({
         };
 
         var rotateBlocks=[],i=0,companies=this.state.company;
-        var prevKey;
         for(var key in companies){
             var order;
-            switch(i/2){
+            switch(i/4){
                 case 0:order="one";break;
                 case 1:order="two";break;
                 case 2:order="three";break;
@@ -115,17 +170,18 @@ var Company=React.createClass({
                 case 5:order="six";break;
                 case 6:order="seven";break;
             }
-            if(i%2)
+            if(i%4===3)
                 rotateBlocks.push(
                     <RotateBlock
                         style={blockStyle[order]}
-                        front={companies[prevKey]}
-                        back={companies[key]}
+                        front={companies[i-3]}
+                        back={companies[i-2]}
+                        three={companies[i-1]}
+                        four={companies[i]}
                     />
                 );
-            else prevKey=key;
             i++;
-        };
+        }
         return(
             <div>
                 <Tags pagename="company" />

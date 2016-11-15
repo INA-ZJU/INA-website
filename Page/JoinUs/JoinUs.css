@@ -1,23 +1,24 @@
 .container{
     background: url("/Page/JoinUs/static/background.jpg") center;
     background-size:cover;
-    position: relative;
+    position: static;
 }
 
 .frame{
-    background: url("/Page/JoinUs/static/frame.png") -5px 0;
+    background: url("/Page/JoinUs/static/1.png") -5px 0;
     background-size: contain;
-    width: 295px;
+    position: relative;
+    top:83px;
+    width: 670px;
     height: 400px;
-    position: absolute;
-    top: 83px;
-    right: 20px;
+    margin:0px auto;
+
 }
 
 .button{
+    left:250px;
     position: absolute;
     top: 290px;
-    right: 10px;
     width: 170px;
     height: 56px;
 }
@@ -27,11 +28,12 @@
         top:70px;
         background-size:120%;
         background-position: -80px -40px;
-        width:400px;
-        height:545px;
+        width:837.5px;
+        height:500px;
     }
     .button{
-        top:430px;
+        left:319px;
+        top:370px;
         width:200px;
         height:60px;
     }

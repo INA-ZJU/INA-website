@@ -74,6 +74,7 @@ var Wish=React.createClass({
                             </td>
                         </tr>
                     </tbody>
+                    <div className={style.note}>每人仅限选择一个志愿部门<br/>以最后一次提交的报名表为准</div>
                 </table>
                 <div id="cover" className={style.cover}></div>
             </div>

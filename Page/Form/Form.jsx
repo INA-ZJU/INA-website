@@ -43,43 +43,44 @@ var Form=React.createClass({
             wish: {
                 delete:false,
                 title:'选择部门',
-                chosen:[chosen]
+                chosen:chosen
             },
             reason: '',
             others:[
-                {
-                    type:'single-text',
-                    title:'爱好',
-                    content:''
-                },
-                {
-                    type:'multi-text',
-                    title:'你认为自己最与众不同的特征是什么？请举一个例子。',
-                    content:''
-                },
-                {
-                    type:'multi-text',
-                    title:'请简单描述你最常用或者最喜欢的一个App，说说它最吸引你的地方在哪里，有什么不足。如果你是该产品的产品经理，会如何改进?',
-                    content:''
-                },
-                {
-                    type:'multi-choose',
-                    title:'面试时间',
-                    chosen:[]
-                },
-                {
-                    type:'file',
-                    title:'个人简历',
-                    url:''
-                },
-                {
-                    type:'file',
-                    title:'相关作品',
-                    url:''
-                }
+            {
+                type:'single-text',
+                title:'爱好',
+                content:''
+            },
+            {
+                type:'multi-text',
+                title:'你认为自己最与众不同的特征是什么？请举一个例子。',
+                content:''
+            },
+            {
+                type:'multi-text',
+                title:'请简单描述你最常用或者最喜欢的一个App，说说它最吸引你的地方在哪里，有什么不足。如果你是该产品的产品经理，会如何改进?',
+                content:''
+            },
+            {
+                type:'multi-choose',
+                title:'面试时间',
+                chosen:[chosen]
+            },
+            {
+                type:'file',
+                title:'个人简历',
+                url:''
+            },
+            {
+                type:'file',
+                title:'相关作品',
+                url:''
+            }
             ],
             remark:''
-        }
+        };
+        
     },
     componentDidMount:function(){
         var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
@@ -222,8 +223,37 @@ var Form=React.createClass({
         localStorage.setItem("formCache",cache);
         alert('已成功保存!');
     },
+    deleteForm:function(){
+        localStorage.clear();
+        window.location.href = '/#/wish';
+        alert('已成功删除!');
+    },
     submit: function(){
-        $.ajax({
+        var basei=this.state.baseinfo;
+        var missInfor=[];
+        if(basei.name===''){
+            missInfor.push("姓名");
+        }
+        if(basei.schoolID===''){
+            missInfor.push("学号");
+        }
+        if(basei.major===''){
+            missInfor.push("专业");
+        }
+        if(basei.grade===''){
+            missInfor.push("年级");
+        }
+        if(basei.telnumber===''){
+            missInfor.push("电话");
+        }
+        if(basei.email===''){
+            missInfor.push("邮箱");
+        }
+        if(this.state.others[3].chosen.length===0){
+            missInfor.push("面试时间");
+        }
+        if(missInfor.length===0){
+            $.ajax({
             url: "http://182.254.157.172/form/submit",
             //url: "http://localhost:3000/form/submit",
             contentType: 'application/json',
@@ -244,7 +274,6 @@ var Form=React.createClass({
                 switch(data.code){
                     case 0:
                         alert("报名表提交成功!");
-                        window.location.href = '/#/wish';
                         break;
                     default:
                         alert(data.msg);
@@ -254,7 +283,11 @@ var Form=React.createClass({
             error: function(xhr, status, err) {
                 alert("请检查网络配置!");
             }.bind(this)
-        });
+            });
+        }else{
+            alert('您还没有填写 '+missInfor.toString());
+        }
+        
     },
     dataPass: function(value, target, type, index, checkState){
         //index  可选参数 在others类组件中才会用到 表示others数组中的元素下标
@@ -361,7 +394,6 @@ var Form=React.createClass({
         var conStyle={
             height:this.state.midHeight
         };
-
         return (
             <div className={style.container} style={conStyle}>
                 <Helmet
@@ -627,6 +659,7 @@ var Form=React.createClass({
                     </div>
                     <div className={style.btnBox}>
                         <button className={style.saveBtn} onClick={this.saveForm}>保存</button>
+                        <button className={style.saveBtn} onClick={this.deleteForm}>删除缓存</button>
                         <button className={style.submitBtn} onClick={this.submit}>提交</button>
                     </div>
                 </div>

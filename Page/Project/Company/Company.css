@@ -62,10 +62,10 @@
     top:0;
 }
 .rotateBox>.front{
-    -moz-animation: frontLogo 16s linear infinite;
-    -webkit-animation:frontLogo 16s  linear infinite;
-    -o-animation:frontLogo 16s  linear infinite;
-    animation:frontLogo 16s  linear infinite;
+    -moz-animation: frontLogo 6s linear infinite;
+    -webkit-animation:frontLogo 6s  linear infinite;
+    -o-animation:frontLogo 6s  linear infinite;
+    animation:frontLogo 6s  linear infinite;
     z-index:2;
 }
 .rotateBox>.back{
@@ -74,10 +74,10 @@
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
-    -webkit-animation:backLogo 16s  linear infinite;
-    -o-animation:backLogo 16s  linear infinite;
-    animation:backLogo 16s  linear infinite;
-    -moz-animation: backLogo 16s  linear infinite;
+    -webkit-animation:backLogo 6s  linear infinite;
+    -o-animation:backLogo 6s  linear infinite;
+    animation:backLogo 6s  linear infinite;
+    -moz-animation: backLogo 6s  linear infinite;
     z-index:1;
 }
 @keyframes frontLogo{
