@@ -10,7 +10,7 @@ var Form=React.createClass({
         var cache=JSON.parse(localStorage.getItem("formCache"));
         return cache || {
             midHeight:0,
-            eventID: 19,
+            eventID: 48,
             writetime: '',
             browserinfo: '',
             baseinfo:{
@@ -43,44 +43,99 @@ var Form=React.createClass({
             wish: {
                 delete:false,
                 title:'选择部门',
-                chosen:chosen
-            },
-            reason: '',
-            others:[
-            {
-                type:'single-text',
-                title:'爱好',
-                content:''
-            },
-            {
-                type:'multi-text',
-                title:'你认为自己最与众不同的特征是什么？请举一个例子。',
-                content:''
-            },
-            {
-                type:'multi-text',
-                title:'请简单描述你最常用或者最喜欢的一个App，说说它最吸引你的地方在哪里，有什么不足。如果你是该产品的产品经理，会如何改进?',
-                content:''
-            },
-            {
-                type:'multi-choose',
-                title:'面试时间',
                 chosen:[chosen]
             },
-            {
-                type:'file',
-                title:'个人简历',
-                url:''
-            },
-            {
-                type:'file',
-                title:'相关作品',
-                url:''
-            }
+            reason: [''],
+            others:[
+                {
+                    type:'single-text',
+                    title:'爱好',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'你认为自己最与众不同的特征是什么？请举一个例子。',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'你平时会从哪些渠道获取泛TMT行业的信息？请对这些渠道进行点评（可从覆盖领域、更新速度、文章质量等维度入手），并举一个例子，说明你是如何通过综合各个渠道的信息，对自己感兴趣的某一领域形成了较为深入的了解的。',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'说说你对BAT三年后各自状况的预测，并阐述原因。届时是否会有其他互联网公司崛起，改变BAT三极分立的局面？如果有，请列举，并说明理由；如果没有，请说明如何才有可能打破这一局面。',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'请简要概括下全球几大互联网巨头（BAT、FLAG）的发展史（每家不超过100字），并分别用一句话总结他们成功的关键原因。按照这种逻辑，你觉得现在哪一家未上市公司有可能成为下一个BAT、FLAG级别的巨头？',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'你认为目前直播产品面临的困境是什么？需要通过什么样的产品或运营手段摆脱困境？',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'同样作为即时通讯社交产品，你认为易信为什么没能获得像微信一样的成功？易信最大的优势和最失败的地方分别是什么？',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'阿里巴巴“双十一”为什么能取得如此大的成功？如果你是2017年天猫“双十一”的策划总监，你会做出哪些改变？',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'IBM Watson Health入华，你觉得在技术层面上有什么可以帮助其更好适应中国市场的？',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'你是怎么看待自己的职业发展规划的，INA能给你带来什么？',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'你觉得机器有可能学会自己给自己编程吗？如果机器学会了自己给自己编程，那程序员还有什么工作可做？',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'请在报名表最后上传作品集，并简单介绍一下最满意的一件作品。',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'请你选择一个你最喜欢的app或者网站，谈谈它的设计亮点。',
+                    content:''
+                },
+                {
+                    type:'multi-text',
+                    title:'请在设计层面对我们的官网提出你的修改意见。',
+                    content:''
+                },
+                {
+                    type:'multi-choose',
+                    title:'面试时间',
+                    chosen:[]
+                },
+                {
+                    type:'file',
+                    title:'个人简历',
+                    url:''
+                },
+                {
+                    type:'file',
+                    title:'相关作品',
+                    url:''
+                }
             ],
             remark:''
         };
-        
+
     },
     componentDidMount:function(){
         var midHeight=document.body.clientHeight||document.documentElement.clientHeight;
@@ -287,7 +342,7 @@ var Form=React.createClass({
         }else{
             alert('您还没有填写 '+missInfor.toString());
         }
-        
+
     },
     dataPass: function(value, target, type, index, checkState){
         //index  可选参数 在others类组件中才会用到 表示others数组中的元素下标
@@ -394,6 +449,7 @@ var Form=React.createClass({
         var conStyle={
             height:this.state.midHeight
         };
+
         return (
             <div className={style.container} style={conStyle}>
                 <Helmet
@@ -566,29 +622,179 @@ var Form=React.createClass({
                             <big className={style.titleText}>其他问题</big>
                         </div>
                         <table className={style.others}>
-                            <tbody>
-                                <tr className={style.areaTr}>
-                                    <td>
-                                        <div className={style.label}>1.你认为自己最与众不同的特征是什么？请举一个例子。</div>
-                                        <textarea className={style.area} defaultValue={this.state.others[1].content}
-                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 1, null)}.bind(this)}/>
-                                    </td>
-                                </tr>
-                                <tr className={style.areaTr}>
-                                    <td>
-                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
-                                        <textarea className={style.area} defaultValue={this.state.reason}
-                                                  onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
-                                    </td>
-                                </tr>
-                                <tr className={style.areaTr}>
-                                    <td>
-                                        <div className={style.label}>3.请简单描述你最常用或者最喜欢的一个App，说说它最吸引你的地方在哪里，有什么不足。如果你是该产品的产品经理，会如何改进?</div>
-                                        <textarea className={style.area} defaultValue={this.state.others[2].content}
-                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            {
+                                function(){
+                                    switch (this.state.wish.chosen[0]){
+                                        case "战略/VC部":
+                                            return(
+                                                <tbody>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>1.你认为自己最与众不同的特征是什么？请举一个例子。</div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[1].content}
+                                                            onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 1, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
+                                                        <textarea className={style.area} defaultValue={this.state.reason}
+                                                            onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>3.你平时会从哪些渠道获取泛TMT行业的信息？请对这些渠道进行点评（可从覆盖领域、更新速度、文章质量等维度入手），并举一个例子，说明你是如何通过综合各个渠道的信息，对自己感兴趣的某一领域形成了较为深入的了解的。 </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[2].content}
+                                                            onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>4.说说你对BAT三年后各自状况的预测，并阐述原因。届时是否会有其他互联网公司崛起，改变BAT三极分立的局面？如果有，请列举，并说明理由；如果没有，请说明如何才有可能打破这一局面。  </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[3].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>5.请简要概括下全球几大互联网巨头（BAT、FLAG）的发展史（每家不超过100字），并分别用一句话总结他们成功的关键原因。按照这种逻辑，你觉得现在哪一家未上市公司有可能成为下一个BAT、FLAG级别的巨头？  </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[4].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            );
+                                            break;
+                                        case "产品运营部":
+                                            return(
+                                                <tbody>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>1.你认为自己最与众不同的特征是什么？请举一个例子。</div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[1].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 1, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
+                                                        <textarea className={style.area} defaultValue={this.state.reason}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>3.你认为目前直播产品面临的困境是什么？需要通过什么样的产品或运营手段摆脱困境？ </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[5].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>4.同样作为即时通讯社交产品，你认为易信为什么没能获得像微信一样的成功？易信最大的优势和最失败的地方分别是什么？ </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[6].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>5.阿里巴巴“双十一”为什么能取得如此大的成功？如果你是2017年天猫“双十一”的策划总监，你会做出哪些改变？ </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[7].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            );
+                                            break;
+                                        case "技术部":
+                                            return(
+                                                <tbody>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>1.你认为自己最与众不同的特征是什么？请举一个例子。</div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[1].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 1, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
+                                                        <textarea className={style.area} defaultValue={this.state.reason}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>3.IBM Watson Health入华，你觉得在技术层面上有什么可以帮助其更好适应中国市场的？ </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[8].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>4.你是怎么看待自己的职业发展规划的，INA能给你带来什么？ </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[9].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>5.你觉得机器有可能学会自己给自己编程吗？如果机器学会了自己给自己编程，那程序员还有什么工作可做？ </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[10].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            );
+                                            break;
+                                        case "技术部":
+                                            return(
+                                                <tbody>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>1.你认为自己最与众不同的特征是什么？请举一个例子。</div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[1].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 1, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
+                                                        <textarea className={style.area} defaultValue={this.state.reason}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>3.请在报名表最后上传作品集，并简单介绍一下最满意的一件作品。 </div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[11].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>4.请你选择一个你最喜欢的app或者网站，谈谈它的设计亮点。</div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[12].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                <tr className={style.areaTr}>
+                                                    <td>
+                                                        <div className={style.label}>5.请在设计层面对我们的官网提出你的修改意见。</div>
+                                                        <textarea className={style.area} defaultValue={this.state.others[13].content}
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            );
+                                            break;
+                                        default:
+                                            return(null);
+                                    }
+                                }.bind(this)()
+                            }
+
                         </table>
                     </div>
                     <div className={style.content}>
@@ -600,29 +806,29 @@ var Form=React.createClass({
                             <tbody>
                             <tr>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周六上午")>-1)?{checked:"checked"}:{})}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六上午")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六上午', null, 4, 3, checked)}.bind(this)}/>周六上午
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周六下午")>-1)?{checked:"checked"}:{})}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六下午")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六下午', null, 4, 3, checked)}.bind(this)}/>周六下午
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周六晚上")>-1)?{checked:"checked"}:{})}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六晚上")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六晚上', null, 4, 3, checked)}.bind(this)}/>周六晚上
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周日上午")>-1)?{checked:"checked"}:{})}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日上午")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日上午', null, 4, 3, checked)}.bind(this)}/>周日上午
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周日下午")>-1)?{checked:"checked"}:{})}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日下午")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日下午', null, 4, 3, checked)}.bind(this)}/>周日下午
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[3].chosen.indexOf("周日晚上")>-1)?{checked:"checked"}:{})}
+                                    <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日晚上")>-1)?{checked:"checked"}:{})}
                                            onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日晚上', null, 4, 3, checked)}.bind(this)}/>周日晚上
                                 </td>
                             </tr>
@@ -641,8 +847,8 @@ var Form=React.createClass({
                                     个人简历
                                 </td>
                                 <td>
-                                    <div ref="file4" className={style.filename}>您还未上传任何文件</div>
-                                    <div id="file4" className={style.fileButton}>上传</div>
+                                    <div ref="file15" className={style.filename}>您还未上传任何文件</div>
+                                    <div id="file15" className={style.fileButton}>上传</div>
                                 </td>
                             </tr>
                             <tr>
@@ -650,8 +856,8 @@ var Form=React.createClass({
                                     相关作品
                                 </td>
                                 <td>
-                                    <div ref="file5" className={style.filename}>您还未上传任何文件</div>
-                                    <div id="file5"  className={style.fileButton}>上传</div>
+                                    <div ref="file16" className={style.filename}>您还未上传任何文件</div>
+                                    <div id="file16"  className={style.fileButton}>上传</div>
                                 </td>
                             </tr>
                             </tbody>
