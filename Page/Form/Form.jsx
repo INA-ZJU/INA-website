@@ -6,7 +6,7 @@ var Form=React.createClass({
     getInitialState:function(){
         var choice = ['战略/VC部', '产品运营部', '技术部', '设计部'];
         var index = this.props.params.department;
-        var chosen = choice[index];
+        var chosen = ['',choice[index]];
         var cache=JSON.parse(localStorage.getItem("formCache"));
         return cache || {
             midHeight:0,
@@ -43,7 +43,7 @@ var Form=React.createClass({
             wish: {
                 delete:false,
                 title:'选择部门',
-                chosen:[chosen]
+                chosen:chosen
             },
             reason: [''],
             others:[
