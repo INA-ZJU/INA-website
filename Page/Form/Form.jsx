@@ -748,7 +748,7 @@ var Form=React.createClass({
                                                 </tbody>
                                             );
                                             break;
-                                        case "技术部":
+                                        case "设计部":
                                             return(
                                                 <tbody>
                                                 <tr className={style.areaTr}>
