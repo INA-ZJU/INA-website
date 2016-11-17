@@ -624,7 +624,7 @@ var Form=React.createClass({
                         <table className={style.others}>
                             {
                                 function(){
-                                    switch (this.state.wish.chosen[0]){
+                                    switch (this.state.wish.chosen[1]){
                                         case "战略/VC部":
                                             return(
                                                 <tbody>
