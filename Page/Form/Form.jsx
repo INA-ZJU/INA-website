@@ -304,7 +304,7 @@ var Form=React.createClass({
         if(basei.email===''){
             missInfor.push("邮箱");
         }
-        if(this.state.others[3].chosen.length===0){
+        if(this.state.others[14].chosen.length===0){
             missInfor.push("面试时间");
         }
         if(missInfor.length===0){
