@@ -653,14 +653,14 @@ var Form=React.createClass({
                                                     <td>
                                                         <div className={style.label}>4.说说你对BAT三年后各自状况的预测，并阐述原因。届时是否会有其他互联网公司崛起，改变BAT三极分立的局面？如果有，请列举，并说明理由；如果没有，请说明如何才有可能打破这一局面。  </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[3].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 3, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
                                                         <div className={style.label}>5.请简要概括下全球几大互联网巨头（BAT、FLAG）的发展史（每家不超过100字），并分别用一句话总结他们成功的关键原因。按照这种逻辑，你觉得现在哪一家未上市公司有可能成为下一个BAT、FLAG级别的巨头？  </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[4].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 4, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -687,21 +687,21 @@ var Form=React.createClass({
                                                     <td>
                                                         <div className={style.label}>3.你认为目前直播产品面临的困境是什么？需要通过什么样的产品或运营手段摆脱困境？ </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[5].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 5, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
                                                         <div className={style.label}>4.同样作为即时通讯社交产品，你认为易信为什么没能获得像微信一样的成功？易信最大的优势和最失败的地方分别是什么？ </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[6].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 6, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
                                                         <div className={style.label}>5.阿里巴巴“双十一”为什么能取得如此大的成功？如果你是2017年天猫“双十一”的策划总监，你会做出哪些改变？ </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[7].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 7, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -728,21 +728,21 @@ var Form=React.createClass({
                                                     <td>
                                                         <div className={style.label}>3.IBM Watson Health入华，你觉得在技术层面上有什么可以帮助其更好适应中国市场的？ </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[8].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 8, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
                                                         <div className={style.label}>4.你是怎么看待自己的职业发展规划的，INA能给你带来什么？ </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[9].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 9, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
                                                         <div className={style.label}>5.你觉得机器有可能学会自己给自己编程吗？如果机器学会了自己给自己编程，那程序员还有什么工作可做？ </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[10].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 10, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -769,21 +769,21 @@ var Form=React.createClass({
                                                     <td>
                                                         <div className={style.label}>3.请在报名表最后上传作品集，并简单介绍一下最满意的一件作品。 </div>
                                                         <textarea className={style.area} defaultValue={this.state.others[11].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 11, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
                                                         <div className={style.label}>4.请你选择一个你最喜欢的app或者网站，谈谈它的设计亮点。</div>
                                                         <textarea className={style.area} defaultValue={this.state.others[12].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 12, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
                                                         <div className={style.label}>5.请在设计层面对我们的官网提出你的修改意见。</div>
                                                         <textarea className={style.area} defaultValue={this.state.others[13].content}
-                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 2, null)}.bind(this)}/>
+                                                                  onBlur={function(event){this.dataPass(event.target.value, 'null', 4, 13, null)}.bind(this)}/>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -807,29 +807,29 @@ var Form=React.createClass({
                             <tr>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六上午")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六上午', null, 4, 3, checked)}.bind(this)}/>周六上午
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六上午', null, 4, 14, checked)}.bind(this)}/>周六上午
                                 </td>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六下午")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六下午', null, 4, 3, checked)}.bind(this)}/>周六下午
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六下午', null, 4, 14, checked)}.bind(this)}/>周六下午
                                 </td>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六晚上")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六晚上', null, 4, 3, checked)}.bind(this)}/>周六晚上
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六晚上', null, 4, 14, checked)}.bind(this)}/>周六晚上
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日上午")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日上午', null, 4, 3, checked)}.bind(this)}/>周日上午
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日上午', null, 4, 14, checked)}.bind(this)}/>周日上午
                                 </td>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日下午")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日下午', null, 4, 3, checked)}.bind(this)}/>周日下午
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日下午', null, 4, 14, checked)}.bind(this)}/>周日下午
                                 </td>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日晚上")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日晚上', null, 4, 3, checked)}.bind(this)}/>周日晚上
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日晚上', null, 4, 14, checked)}.bind(this)}/>周日晚上
                                 </td>
                             </tr>
                             </tbody>
