@@ -10,7 +10,7 @@ var Form=React.createClass({
         var cache=JSON.parse(localStorage.getItem("formCache"));
         return cache || {
             midHeight:0,
-            eventID: 48,
+            eventID: 49,
             writetime: '',
             browserinfo: '',
             baseinfo:{
