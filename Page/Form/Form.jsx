@@ -637,7 +637,7 @@ var Form=React.createClass({
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
-                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
+                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[1]}？</div>
                                                         <textarea className={style.area} defaultValue={this.state.reason}
                                                             onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
                                                     </td>
@@ -678,7 +678,7 @@ var Form=React.createClass({
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
-                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
+                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[1]}？</div>
                                                         <textarea className={style.area} defaultValue={this.state.reason}
                                                                   onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
                                                     </td>
@@ -719,7 +719,7 @@ var Form=React.createClass({
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
-                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
+                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[1]}？</div>
                                                         <textarea className={style.area} defaultValue={this.state.reason}
                                                                   onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
                                                     </td>
@@ -760,7 +760,7 @@ var Form=React.createClass({
                                                 </tr>
                                                 <tr className={style.areaTr}>
                                                     <td>
-                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[0]}？</div>
+                                                        <div className={style.label}>2.你为什么想加入{this.state.wish.chosen[1]}？</div>
                                                         <textarea className={style.area} defaultValue={this.state.reason}
                                                                   onBlur={function(event){this.dataPass(event.target.value, 'reason', 5, 0, null)}.bind(this)}/>
                                                     </td>
