@@ -22,7 +22,7 @@ var Company=React.createClass({
                 },
                 {
                     img:"/Page/Project/static/11.png",
-                    name:"保洁"
+                    name:"宝洁"
                 },
                 {
                     img:"/Page/Project/static/qunar-2.png",

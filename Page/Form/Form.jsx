@@ -807,29 +807,29 @@ var Form=React.createClass({
                             <tr>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六上午")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六上午', null, 4, 14, checked)}.bind(this)}/>周六上午
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六上午', null, 4, 14, checked)}.bind(this)}/>周六上午(12月3日)
                                 </td>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六下午")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六下午', null, 4, 14, checked)}.bind(this)}/>周六下午
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六下午', null, 4, 14, checked)}.bind(this)}/>周六下午(12月3日)
                                 </td>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周六晚上")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六晚上', null, 4, 14, checked)}.bind(this)}/>周六晚上
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周六晚上', null, 4, 14, checked)}.bind(this)}/>周六晚上(12月3日)
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日上午")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日上午', null, 4, 14, checked)}.bind(this)}/>周日上午
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日上午', null, 4, 14, checked)}.bind(this)}/>周日上午(12月4日)
                                 </td>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日下午")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日下午', null, 4, 14, checked)}.bind(this)}/>周日下午
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日下午', null, 4, 14, checked)}.bind(this)}/>周日下午(12月4日)
                                 </td>
                                 <td>
                                     <input type="checkbox" name="time" className={style.checkbox} {...((this.state.others[14].chosen.indexOf("周日晚上")>-1)?{checked:"checked"}:{})}
-                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日晚上', null, 4, 14, checked)}.bind(this)}/>周日晚上
+                                           onClick={function(event){var checked = (event.target.checked)?1:0; this.dataPass('周日晚上', null, 4, 14, checked)}.bind(this)}/>周日晚上(12月4日)
                                 </td>
                             </tr>
                             </tbody>
