@@ -619,7 +619,7 @@ var Form=React.createClass({
                     <div className={style.content}>
                         <div className={style.title}>
                             <img className={style.titleImg} src="/Page/Form/static/others.png" alt="其他问题"/>
-                            <big className={style.titleText}>其他问题</big>
+                            <big className={style.titleText}>其他问题(以下问题选填，填写有助于我们更好得了解你)</big>
                         </div>
                         <table className={style.others}>
                             {
